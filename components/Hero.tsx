@@ -1,7 +1,5 @@
 'use client'
 
-import { FaBook, FaStar, FaChalkboardUser, FaUsers, FaChartLine } from 'react-icons/fa6'
-
 export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12 sm:py-16 lg:py-20 overflow-hidden">
@@ -14,7 +12,7 @@ export default function Hero() {
         <div className="text-center mb-12 sm:mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-14 sm:w-16 h-14 sm:h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center shadow-lg">
-              <FaBook className="text-2xl sm:text-3xl text-white" />
+              <span className="text-2xl sm:text-3xl">📚</span>
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
@@ -33,9 +31,7 @@ export default function Hero() {
             {/* Main Offer Box */}
             <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl p-6 sm:p-8 shadow-2xl transform hover:scale-105 transition duration-300">
               <div className="flex items-start gap-4">
-                <div className="text-5xl sm:text-6xl flex-shrink-0">
-                  <FaStar className="text-accent-300" />
-                </div>
+                <div className="text-5xl sm:text-6xl flex-shrink-0">⭐</div>
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-bold mb-3">CLASS 1 TO 10</h2>
                   <div className="inline-block bg-accent-500 text-white px-4 py-2 rounded-full font-bold text-sm sm:text-base mb-3">
@@ -51,9 +47,7 @@ export default function Hero() {
               <h3 className="text-xl sm:text-2xl font-bold text-primary-700 mb-6">Why Choose EDU RISE?</h3>
               
               <div className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                <div className="text-3xl flex-shrink-0 text-accent-600">
-                  <FaChalkboardUser />
-                </div>
+                <div className="text-3xl flex-shrink-0">🎯</div>
                 <div>
                   <p className="font-bold text-primary-700 text-sm sm:text-base">Smart Digital Board Classes</p>
                   <p className="text-xs sm:text-sm text-neutral-600 mt-1">Interactive learning with cutting-edge technology</p>
@@ -61,9 +55,7 @@ export default function Hero() {
               </div>
 
               <div className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                <div className="text-3xl flex-shrink-0 text-accent-600">
-                  <FaUsers />
-                </div>
+                <div className="text-3xl flex-shrink-0">👥</div>
                 <div>
                   <p className="font-bold text-primary-700 text-sm sm:text-base">Small Batch Size</p>
                   <p className="text-xs sm:text-sm text-neutral-600 mt-1">Personalized attention for every student</p>
@@ -71,9 +63,7 @@ export default function Hero() {
               </div>
 
               <div className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                <div className="text-3xl flex-shrink-0 text-accent-600">
-                  <FaChartLine />
-                </div>
+                <div className="text-3xl flex-shrink-0">📊</div>
                 <div>
                   <p className="font-bold text-primary-700 text-sm sm:text-base">Weekly Tests & Tracking</p>
                   <p className="text-xs sm:text-sm text-neutral-600 mt-1">Regular assessments and performance monitoring</p>
@@ -94,33 +84,33 @@ export default function Hero() {
             {/* Founder Card */}
             <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white rounded-3xl p-6 sm:p-10 pt-16 sm:pt-20 relative shadow-2xl overflow-hidden">
               {/* Card Background Accent */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-accent-400 rounded-full mix-blend-multiply filter blur-2xl opacity-10"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-accent-400 rounded-full mix-blend-multiply filter blur-2xl opacity-5"></div>
 
               <div className="relative z-10 text-center">
                 {/* Avatar */}
                 <div className="mb-6 flex justify-center">
-                  <div className="w-24 sm:w-28 h-24 sm:h-28 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-6xl sm:text-7xl shadow-lg border-4 border-accent-400">
+                  <div className="w-24 sm:w-28 h-24 sm:h-28 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-6xl sm:text-7xl shadow-lg border-4 border-white border-opacity-20">
                     👨‍🏫
                   </div>
                 </div>
 
                 {/* Name and Title */}
                 <h3 className="text-2xl sm:text-3xl font-bold mb-2">Vivek Sir</h3>
-                <p className="text-accent-300 font-semibold text-sm sm:text-base uppercase tracking-wider mb-3">Founder & Head Coach</p>
+                <p className="text-white font-semibold text-sm sm:text-base uppercase tracking-wider mb-3">Founder & Head Coach</p>
                 <p className="text-neutral-200 text-sm mb-2">Mentor | Guide | Motivator</p>
-                <p className="text-accent-200 italic text-xs sm:text-sm mb-6">Building Confidence, Shaping Futures</p>
+                <p className="text-neutral-100 italic text-xs sm:text-sm mb-6">Building Confidence, Shaping Futures</p>
 
                 {/* Divider */}
-                <div className="h-1 w-16 bg-gradient-to-r from-accent-400 to-accent-300 rounded-full mx-auto mb-6"></div>
+                <div className="h-1 w-16 bg-gradient-to-r from-white to-neutral-300 rounded-full mx-auto mb-6 opacity-40"></div>
 
                 {/* Experience Badge */}
-                <div className="bg-white bg-opacity-15 backdrop-blur-sm rounded-2xl p-5 sm:p-6 text-center mb-6 hover:bg-opacity-20 transition">
-                  <p className="text-4xl sm:text-5xl font-bold text-accent-300 mb-1">10+</p>
+                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-5 sm:p-6 text-center mb-6 hover:bg-opacity-15 transition">
+                  <p className="text-4xl sm:text-5xl font-bold text-white mb-1">10+</p>
                   <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Years of Excellence</p>
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full bg-gradient-to-r from-accent-500 to-accent-600 text-white py-3 sm:py-4 rounded-xl font-bold hover:from-accent-600 hover:to-accent-700 transition duration-300 shadow-lg text-sm sm:text-base transform hover:scale-105">
+                <button className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 sm:py-4 rounded-xl font-bold hover:from-primary-600 hover:to-primary-700 transition duration-300 shadow-lg text-sm sm:text-base transform hover:scale-105">
                   Get Free Demo Class
                 </button>
 

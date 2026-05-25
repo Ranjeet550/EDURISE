@@ -1,0 +1,9 @@
+# Allow all bots
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://edurise.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

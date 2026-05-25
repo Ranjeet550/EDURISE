@@ -6,10 +6,12 @@ import Testimonials from '@/components/Testimonials'
 import SpecialOffer from '@/components/SpecialOffer'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import StructuredData from '@/components/StructuredData'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
+      <StructuredData />
       <Header />
       <Hero />
       <Courses />
