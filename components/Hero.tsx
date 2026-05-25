@@ -107,17 +107,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Floating Badge - Top Left */}
-              <div className="absolute top-4 sm:top-8 left-4 sm:left-8 bg-white rounded-2xl p-3 sm:p-4 shadow-xl transform hover:scale-110 transition duration-300 z-20 animate-float-delay-3">
-                <p className="text-2xl sm:text-3xl font-bold text-primary-700">⭐</p>
-                <p className="text-xs font-bold text-primary-600 mt-1">5.0 Rating</p>
-              </div>
+              
 
-              {/* Floating Badge - Bottom Right */}
-              <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-gradient-to-br from-accent-400 to-accent-500 text-white rounded-2xl p-3 sm:p-4 shadow-xl transform hover:scale-110 transition duration-300 z-20 animate-float-delay-4">
-                <p className="text-2xl sm:text-3xl font-bold">✓</p>
-                <p className="text-xs font-bold mt-1">Verified</p>
-              </div>
+             
 
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl blur-3xl opacity-20 -z-10"></div>
