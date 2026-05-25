@@ -2,125 +2,206 @@
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12 sm:py-16 lg:py-20 overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -mr-48 -mt-48"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -ml-48 -mb-48"></div>
+    <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900 min-h-screen flex items-center overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute -bottom-8 left-10 sm:left-20 w-72 sm:w-96 h-72 sm:h-96 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-14 sm:w-16 h-14 sm:h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-2xl sm:text-3xl">📚</span>
-            </div>
-            <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-                <span className="text-primary-700">EDU</span>
-                <span className="text-accent-600 ml-2">RISE</span>
-              </h1>
-              <p className="text-sm sm:text-base text-primary-600 font-semibold mt-1">COACHING INSTITUTE</p>
-            </div>
-          </div>
-          <p className="text-accent-600 text-lg sm:text-xl font-semibold italic">Learn Today, Lead Tomorrow</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen">
           {/* Left Content */}
-          <div className="space-y-8">
-            {/* Main Offer Box */}
-            <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl p-6 sm:p-8 shadow-2xl transform hover:scale-105 transition duration-300">
-              <div className="flex items-start gap-4">
-                <div className="text-5xl sm:text-6xl flex-shrink-0">⭐</div>
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-3">CLASS 1 TO 10</h2>
-                  <div className="inline-block bg-accent-500 text-white px-4 py-2 rounded-full font-bold text-sm sm:text-base mb-3">
-                    ALL SUBJECTS
-                  </div>
-                  <p className="text-sm sm:text-base text-accent-100">⭐⭐⭐⭐⭐ 10+ Years Excellence</p>
-                </div>
-              </div>
+          <div className="space-y-6 sm:space-y-8 py-12 lg:py-0">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white bg-opacity-10 backdrop-blur-md px-3 sm:px-4 py-2 rounded-full border border-white border-opacity-20">
+              <span className="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
+              <p className="text-white text-xs sm:text-sm font-semibold">🎓 Join 500+ Successful Students</p>
             </div>
 
-            {/* Key Features */}
+            {/* Main Heading */}
             <div className="space-y-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-primary-700 mb-6">Why Choose EDU RISE?</h3>
-              
-              <div className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                <div className="text-3xl flex-shrink-0">🎯</div>
-                <div>
-                  <p className="font-bold text-primary-700 text-sm sm:text-base">Smart Digital Board Classes</p>
-                  <p className="text-xs sm:text-sm text-neutral-600 mt-1">Interactive learning with cutting-edge technology</p>
-                </div>
-              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                Transform Your
+                <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
+                  Academic Journey
+                </span>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-neutral-200 max-w-xl leading-relaxed">
+                Expert coaching for Classes 1-10 with personalized attention, digital board classes, and proven success strategies. Your path to excellence starts here.
+              </p>
+            </div>
 
-              <div className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                <div className="text-3xl flex-shrink-0">👥</div>
-                <div>
-                  <p className="font-bold text-primary-700 text-sm sm:text-base">Small Batch Size</p>
-                  <p className="text-xs sm:text-sm text-neutral-600 mt-1">Personalized attention for every student</p>
-                </div>
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-bold text-sm sm:text-base rounded-xl overflow-hidden shadow-2xl hover:shadow-accent-500/50 transition duration-300 w-full sm:w-auto">
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-accent-700 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                <span className="relative flex items-center justify-center gap-2">
+                  Get Free Demo Class
+                  <svg className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </button>
+              <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white bg-opacity-10 backdrop-blur-md text-white font-bold text-sm sm:text-base rounded-xl border-2 border-white border-opacity-30 hover:bg-opacity-20 hover:border-opacity-50 transition duration-300 w-full sm:w-auto">
+                Learn More
+              </button>
+            </div>
 
-              <div className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-                <div className="text-3xl flex-shrink-0">📊</div>
-                <div>
-                  <p className="font-bold text-primary-700 text-sm sm:text-base">Weekly Tests & Tracking</p>
-                  <p className="text-xs sm:text-sm text-neutral-600 mt-1">Regular assessments and performance monitoring</p>
-                </div>
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-white border-opacity-10">
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-accent-400">10+</p>
+                <p className="text-xs sm:text-sm text-neutral-300 mt-1">Years Experience</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-accent-400">500+</p>
+                <p className="text-xs sm:text-sm text-neutral-300 mt-1">Happy Students</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-accent-400">100%</p>
+                <p className="text-xs sm:text-sm text-neutral-300 mt-1">Success Rate</p>
               </div>
             </div>
           </div>
 
-          {/* Right Content - Founder Info */}
-          <div className="relative">
-            {/* Admissions Open Badge */}
-            <div className="absolute -top-4 -right-4 sm:top-0 sm:right-0 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl text-center z-20 shadow-xl animate-pulse">
-              <p className="text-xs sm:text-sm font-bold uppercase tracking-wider">🎉 Admissions</p>
-              <p className="text-2xl sm:text-3xl font-bold text-white">OPEN</p>
-              <p className="text-xs mt-1">Limited Seats Available</p>
-            </div>
-
-            {/* Founder Card */}
-            <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white rounded-3xl p-6 sm:p-10 pt-16 sm:pt-20 relative shadow-2xl overflow-hidden">
-              {/* Card Background Accent */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-accent-400 rounded-full mix-blend-multiply filter blur-2xl opacity-5"></div>
-
-              <div className="relative z-10 text-center">
-                {/* Avatar */}
-                <div className="mb-6 flex justify-center">
-                  <div className="w-24 sm:w-28 h-24 sm:h-28 bg-white bg-opacity-10 rounded-full flex items-center justify-center text-6xl sm:text-7xl shadow-lg border-4 border-white border-opacity-20">
-                    👨‍🏫
-                  </div>
+          {/* Right Content - Floating Images */}
+          <div className="relative h-96 sm:h-[500px] md:h-[600px] lg:h-full flex items-center justify-center mt-8 lg:mt-0 px-4 sm:px-0">
+            {/* Floating Images Container */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Main Floating Image - Center */}
+              <div className="absolute w-56 sm:w-64 md:w-72 h-56 sm:h-64 md:h-72 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300 z-20 animate-float">
+                <img 
+                  src="/HERO/pexels-ebahir-34086213.jpg" 
+                  alt="Smart Learning" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-end p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Smart Learning</h3>
+                  <p className="text-xs sm:text-sm text-gray-200">Interactive Classes</p>
                 </div>
-
-                {/* Name and Title */}
-                <h3 className="text-2xl sm:text-3xl font-bold mb-2">Vivek Sir</h3>
-                <p className="text-white font-semibold text-sm sm:text-base uppercase tracking-wider mb-3">Founder & Head Coach</p>
-                <p className="text-neutral-200 text-sm mb-2">Mentor | Guide | Motivator</p>
-                <p className="text-neutral-100 italic text-xs sm:text-sm mb-6">Building Confidence, Shaping Futures</p>
-
-                {/* Divider */}
-                <div className="h-1 w-16 bg-gradient-to-r from-white to-neutral-300 rounded-full mx-auto mb-6 opacity-40"></div>
-
-                {/* Experience Badge */}
-                <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-5 sm:p-6 text-center mb-6 hover:bg-opacity-15 transition">
-                  <p className="text-4xl sm:text-5xl font-bold text-white mb-1">10+</p>
-                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider">Years of Excellence</p>
-                </div>
-
-                {/* CTA Button */}
-                <button className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 sm:py-4 rounded-xl font-bold hover:from-primary-600 hover:to-primary-700 transition duration-300 shadow-lg text-sm sm:text-base transform hover:scale-105">
-                  Get Free Demo Class
-                </button>
-
-                {/* Trust Badge */}
-                <p className="text-xs text-neutral-300 mt-4">✓ 500+ Happy Students | ✓ 100% Success Rate</p>
               </div>
+
+              {/* Floating Image 1 - Top Right */}
+              <div className="absolute top-8 sm:top-12 -right-8 sm:right-0 md:right-8 w-44 sm:w-52 md:w-60 h-44 sm:h-52 md:h-60 rounded-3xl shadow-xl overflow-hidden transform hover:scale-110 transition duration-300 z-10 animate-float-delay-1">
+                <img 
+                  src="/HERO/pexels-george-milton-7034613.jpg" 
+                  alt="Personalized Learning" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col items-center justify-end p-3 sm:p-4">
+                  <h3 className="text-base sm:text-lg font-bold text-white">Personalized</h3>
+                  <p className="text-xs text-gray-200">1:1 Attention</p>
+                </div>
+              </div>
+
+              {/* Floating Image 2 - Bottom Left */}
+              <div className="absolute bottom-8 sm:bottom-12 -left-8 sm:left-0 md:left-8 w-44 sm:w-52 md:w-60 h-44 sm:h-52 md:h-60 rounded-3xl shadow-xl overflow-hidden transform hover:scale-110 transition duration-300 z-10 animate-float-delay-2">
+                <img 
+                  src="/HERO/pexels-martabranco-32046500.jpg" 
+                  alt="Excellence" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col items-center justify-end p-3 sm:p-4">
+                  <h3 className="text-base sm:text-lg font-bold text-white">Excellence</h3>
+                  <p className="text-xs text-gray-200">100% Success</p>
+                </div>
+              </div>
+
+              {/* Floating Badge - Top Left */}
+              <div className="absolute top-4 sm:top-8 left-4 sm:left-8 bg-white rounded-2xl p-3 sm:p-4 shadow-xl transform hover:scale-110 transition duration-300 z-20 animate-float-delay-3">
+                <p className="text-2xl sm:text-3xl font-bold text-primary-700">⭐</p>
+                <p className="text-xs font-bold text-primary-600 mt-1">5.0 Rating</p>
+              </div>
+
+              {/* Floating Badge - Bottom Right */}
+              <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-gradient-to-br from-accent-400 to-accent-500 text-white rounded-2xl p-3 sm:p-4 shadow-xl transform hover:scale-110 transition duration-300 z-20 animate-float-delay-4">
+                <p className="text-2xl sm:text-3xl font-bold">✓</p>
+                <p className="text-xs font-bold mt-1">Verified</p>
+              </div>
+
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl blur-3xl opacity-20 -z-10"></div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="flex flex-col items-center gap-2 animate-bounce">
+          <p className="text-white text-xs sm:text-sm font-semibold">Scroll to explore</p>
+          <svg className="w-5 sm:w-6 h-5 sm:h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        
+        @keyframes float-delay-1 {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+        
+        @keyframes float-delay-2 {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-25px);
+          }
+        }
+        
+        @keyframes float-delay-3 {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
+        @keyframes float-delay-4 {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-18px);
+          }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-float-delay-1 {
+          animation: float-delay-1 4s ease-in-out infinite;
+        }
+        
+        .animate-float-delay-2 {
+          animation: float-delay-2 3.5s ease-in-out infinite;
+        }
+        
+        .animate-float-delay-3 {
+          animation: float-delay-3 2.5s ease-in-out infinite;
+        }
+        
+        .animate-float-delay-4 {
+          animation: float-delay-4 3.2s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   )
 }

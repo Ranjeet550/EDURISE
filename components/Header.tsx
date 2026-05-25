@@ -3,16 +3,17 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaBars, FaX, FaHouse, FaBook, FaLightbulb, FaPhone, FaArrowRight } from 'react-icons/fa6'
+import { FaBars, FaX, FaHouse, FaBook, FaLightbulb, FaPhone, FaArrowRight, FaCircleInfo } from 'react-icons/fa6'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { href: '#about', label: 'About', icon: <FaHouse /> },
-    { href: '#courses', label: 'Courses', icon: <FaBook /> },
-    { href: '#why-us', label: 'Why Us', icon: <FaLightbulb /> },
-    { href: '#contact', label: 'Contact', icon: <FaPhone /> },
+    { href: '/', label: 'Home', icon: <FaHouse /> },
+    { href: '/#about', label: 'About', icon: <FaCircleInfo /> },
+    { href: '/#courses', label: 'Courses', icon: <FaBook /> },
+    { href: '/#why-us', label: 'Why Us', icon: <FaLightbulb /> },
+    { href: '/#contact', label: 'Contact', icon: <FaPhone /> },
   ]
 
   return (

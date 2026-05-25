@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import About from '@/components/About'
 import Courses from '@/components/Courses'
 import WhyUs from '@/components/WhyUs'
 import Testimonials from '@/components/Testimonials'
@@ -14,6 +15,7 @@ export default function Home() {
       <StructuredData />
       <Header />
       <Hero />
+      <About />
       <Courses />
       <WhyUs />
       <Testimonials />
