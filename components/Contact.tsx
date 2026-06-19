@@ -19,11 +19,37 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', phone: '', message: '' })
-    alert('Thank you for your inquiry! We will contact you soon.')
+    
+    try {
+      // Replace with your Google Form action URL
+      const googleFormUrl = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse'
+      
+      // Create FormData object to send to Google Forms
+      const formDataToSubmit = new FormData()
+      
+      // Replace these with your actual Google Form field IDs
+      // You can find these by inspecting the form or using the pre-filled link method
+      formDataToSubmit.append('entry.XXXXXXXXX', formData.name) // Replace XXXXXXXXX with Name field ID
+      formDataToSubmit.append('entry.YYYYYYYYY', formData.email) // Replace YYYYYYYYY with Email field ID
+      formDataToSubmit.append('entry.ZZZZZZZZZ', formData.phone) // Replace ZZZZZZZZZ with Phone field ID
+      formDataToSubmit.append('entry.WWWWWWWWW', formData.message) // Replace WWWWWWWWW with Message field ID
+      
+      // Send to Google Forms (using no-cors mode to avoid CORS issues)
+      await fetch(googleFormUrl, {
+        method: 'POST',
+        body: formDataToSubmit,
+        mode: 'no-cors'
+      })
+      
+      console.log('Form submitted:', formData)
+      setFormData({ name: '', email: '', phone: '', message: '' })
+      alert('Thank you for your inquiry! We will contact you soon.')
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('There was an error sending your message. Please try again.')
+    }
   }
 
   return (

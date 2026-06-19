@@ -1,6 +1,7 @@
 'use client'
 
 import { FaStar, FaUsers, FaAward, FaGraduationCap } from 'react-icons/fa6'
+import Marquee from 'react-fast-marquee'
 
 const testimonials = [
   {
@@ -57,52 +58,60 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2"
-            >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.color} opacity-0 group-hover:opacity-10 transition duration-300`}></div>
+        {/* Testimonials Marquee */}
+        <div className="overflow-hidden w-full bg-gray-100 rounded-2xl py-8 px-4">
+          <Marquee
+            gradient={true}
+            gradientColor="rgb(243, 244, 246)"
+            gradientWidth={120}
+            speed={80}
+            pauseOnHover={true}
+          >
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 w-[380px] flex-shrink-0 mx-6"
+              >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.color} opacity-0 group-hover:opacity-10 transition duration-300`}></div>
 
-              {/* Card Content */}
-              <div className="relative z-10 bg-white p-8 sm:p-10 h-full flex flex-col">
-                {/* Stars */}
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-xl text-accent-500" />
-                  ))}
-                </div>
+                {/* Card Content */}
+                <div className="relative z-10 bg-white p-8 sm:p-10 h-full flex flex-col">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} className="text-xl text-accent-500" />
+                    ))}
+                  </div>
 
-                {/* Quote */}
-                <p className="text-neutral-700 italic text-sm sm:text-base leading-relaxed mb-8 flex-1">
-                  "{testimonial.quote}"
-                </p>
+                  {/* Quote */}
+                  <p className="text-neutral-700 italic font-semibold text-sm sm:text-base leading-tight mb-8 flex-1">
+                    "{testimonial.quote}"
+                  </p>
 
-                {/* Divider */}
-                <div className="h-1 w-12 bg-gradient-to-r from-accent-500 to-accent-300 rounded-full mb-6"></div>
+                  {/* Divider */}
+                  <div className="h-1 w-12 bg-gradient-to-r from-accent-500 to-accent-300 rounded-full mb-6"></div>
 
-                {/* Author Info */}
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0">
-                    <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center text-white shadow-lg text-2xl`}>
-                      {testimonial.icon}
+                  {/* Author Info */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex-shrink-0">
+                      <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center text-white shadow-lg text-2xl`}>
+                        {testimonial.icon}
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-primary-700 text-sm sm:text-base leading-tight">{testimonial.name}</h3>
+                      <p className="text-xs text-neutral-600 font-medium leading-tight">{testimonial.role}</p>
+                      <p className="text-xs font-bold text-accent-600 mt-1">{testimonial.duration}</p>
                     </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-primary-700 text-sm sm:text-base">{testimonial.name}</h3>
-                    <p className="text-xs text-neutral-600">{testimonial.role}</p>
-                    <p className="text-xs font-semibold text-accent-600 mt-1">{testimonial.duration}</p>
-                  </div>
                 </div>
-              </div>
 
-              {/* Top Border Accent */}
-              <div className={`absolute top-0 left-0 h-1 bg-gradient-to-r ${testimonial.color} w-0 group-hover:w-full transition-all duration-300`}></div>
-            </div>
-          ))}
+                {/* Top Border Accent */}
+                <div className={`absolute top-0 left-0 h-1 bg-gradient-to-r ${testimonial.color} w-0 group-hover:w-full transition-all duration-300`}></div>
+              </div>
+            ))}
+          </Marquee>
         </div>
 
         {/* Stats Section */}
