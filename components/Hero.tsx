@@ -30,7 +30,7 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [])
   
-  const goToSlide = (index) => setCurrentSlide(index)
+  const goToSlide = (index: number) => setCurrentSlide(index)
   
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
@@ -107,7 +107,6 @@ export default function Hero() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-end p-4 rounded-full">
                         <h3 className="text-sm xs:text-base sm:text-lg font-bold text-white">{image.title}</h3>
-                        <p className="text-xs text-gray-200">{image.description}</p>
                       </div>
                     </div>
                   ))}
