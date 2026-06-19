@@ -7,8 +7,8 @@ export default function StructuredData() {
     logo: 'https://edurise.com/images/logo.jpg',
     description: 'Professional coaching institute for Classes 1-10 with expert guidance and personalized learning',
     sameAs: [
-      'https://facebook.com/edurise',
-      'https://instagram.com/edurise',
+      'https://www.facebook.com/people/Edurise-Academy/61590300124385/',
+      'https://www.instagram.com/eduriseacedemy?igsh=MTFlODl5dTV6ZnhjNg==',
       'https://youtube.com/edurise',
       'https://twitter.com/edurise',
     ],

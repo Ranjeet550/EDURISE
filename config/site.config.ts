@@ -28,8 +28,8 @@ export const siteConfig = {
 
   // Social Media Links
   social: {
-    facebook: 'https://facebook.com/edurise',
-    instagram: 'https://instagram.com/edurise',
+    facebook: 'https://www.facebook.com/people/Edurise-Academy/61590300124385/',
+    instagram: 'https://www.instagram.com/eduriseacedemy?igsh=MTFlODl5dTV6ZnhjNg==',
     youtube: 'https://youtube.com/edurise',
     twitter: 'https://twitter.com/edurise',
   },
@@ -185,6 +185,12 @@ export const siteConfig = {
     accent: '#ffa500', // Gold
     background: '#ffffff', // White
     text: '#001428', // Dark Navy
+  },
+
+  // Typography
+  fonts: {
+    label: 'font-google-sans', // For config labels
+    fancy: 'font-fancy', // For fancy headings and special elements
   },
 }
 

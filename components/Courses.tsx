@@ -1,6 +1,8 @@
 'use client'
 
 import Image from 'next/image'
+import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { FaComments, FaMicrophone, FaRobot, FaLaptop, FaGlobe, FaLightbulb, FaPencil, FaCircleCheck, FaArrowTrendUp, FaChalkboardUser, FaUsers, FaBook, FaGraduationCap, FaHeadset, FaStar, FaChartLine, FaHandshake, FaQuestion } from 'react-icons/fa6'
 
 const courses = [
@@ -8,31 +10,31 @@ const courses = [
     id: 'english',
     title: 'ENGLISH SPEAKING',
     description: 'Speak better, Express better.',
-    image: '/Courseimage/f5662775f1254b74b167c86fe8175f14.jpg.jpeg',
+    image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.36 PM (1).jpeg',
   },
   {
     id: 'public-speaking',
     title: 'PUBLIC SPEAKING',
     description: 'Build Confidence, Lead Anywhere.',
-    image: '/Courseimage/1000162474-Picsart-AiImageEnhancer.png',
+    image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.37 PM.jpeg',
   },
   {
     id: 'ai',
     title: 'BASIC ARTIFICIAL INTELLIGENCE',
     description: 'Learn AI basics, Shape the future.',
-    image: '/Courseimage/ec3ef21f07feae4856befe7cd5f40f1c.jpg.jpeg',
+    image: '/Courseimage/ai.jpeg',
   },
   {
     id: 'computer',
     title: 'COMPUTER LEARNING',
     description: 'From basics to advanced level.',
-    image: '/Courseimage/1fb57a816c19da90cd6e51bb4994106c.jpg.jpeg',
+    image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.36 PM (3).jpeg',
   },
   {
     id: 'geopolitics',
     title: 'GEOPOLITICS',
     description: 'Understand the world, Lead with knowledge.',
-    image: '/Courseimage/e77fc6f983045606e2fea6ca4590e549.jpg.jpeg',
+    image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.35 PM (2).jpeg',
   },
 ]
 
@@ -51,6 +53,73 @@ const approachSteps = [
   { icon: <FaArrowTrendUp />, title: 'IMPROVEMENT', desc: 'Analyze & improve always' },
 ]
 
+const whyChooseItems = [
+  { icon: <FaChalkboardUser />, text: 'Smart Digital Board Classes', highlight: 'Latest Technology' },
+  { icon: <FaUsers />, text: 'Mentorship & Guidance', highlight: 'Expert Mentors' },
+  { icon: <FaBook />, text: 'Small Batch Size', highlight: 'Better Learning' },
+  { icon: <FaGraduationCap />, text: 'Focus on Concepts', highlight: 'Strong Foundation' },
+  { icon: <FaHeadset />, text: 'Personalized Attention', highlight: 'Individual Care' },
+  { icon: <FaStar />, text: 'Personality Development', highlight: 'Holistic Growth' },
+  { icon: <FaChartLine />, text: 'Weekly Tests & Tracking', highlight: 'Progress Monitor' },
+  { icon: <FaHandshake />, text: 'Safe & Motivating Environment', highlight: 'Student Wellness' },
+  { icon: <FaQuestion />, text: 'Doubt Sessions Anytime', highlight: 'Always Available' },
+]
+
+function ScrollStack() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  return (
+    <div 
+      ref={containerRef}
+      className="space-y-2 sm:space-y-3 max-h-96 sm:max-h-[500px] overflow-y-auto scrollbar-hide"
+    >
+      {whyChooseItems.map((item, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: idx * 0.05 }}
+          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{ x: 8 }}
+          className="relative group cursor-pointer"
+        >
+          {/* Background Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-accent-50 to-primary-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+          
+          {/* Animated Background Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-accent-400/0 via-accent-300/0 to-primary-400/0 group-hover:from-accent-400/10 group-hover:via-accent-300/5 group-hover:to-primary-400/10 transition-all duration-500 rounded-xl"></div>
+          
+          {/* Main Content Container */}
+          <div className="relative px-4 sm:px-5 py-3 sm:py-4 border-l-4 border-accent-400 group-hover:border-accent-600 rounded-r-xl bg-white group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-primary-50 shadow-sm group-hover:shadow-lg transition-all duration-300 flex items-center gap-3 sm:gap-4">
+            {/* Icon Container */}
+            <div className="flex-shrink-0 relative">
+              <div className="absolute inset-0 bg-accent-500 rounded-full blur-md opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center text-white shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 text-base sm:text-lg">
+                {item.icon}
+              </div>
+            </div>
+            
+            {/* Text Content */}
+            <div className="flex-1 min-w-0">
+              <p className="text-sm sm:text-base lg:text-lg font-black text-primary-700 group-hover:text-accent-600 transition-colors duration-300 leading-tight mb-1">
+                {item.text}
+              </p>
+              <span className="inline-block text-sm sm:text-base font-black text-accent-600 bg-accent-50 px-2 py-0.5 rounded-full group-hover:bg-accent-100 group-hover:text-accent-700 transition-all duration-300">
+                {item.highlight}
+              </span>
+            </div>
+            
+            {/* Right Side Accent */}
+            <div className="flex-shrink-0 text-accent-400 opacity-0 group-hover:opacity-100 text-lg transition-all duration-300 transform group-hover:translate-x-1">
+              →
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  )
+}
+
 export default function Courses() {
   return (
     <section id="courses" className="py-16 sm:py-20 bg-gradient-to-b from-white to-primary-50 relative overflow-hidden">
@@ -61,10 +130,10 @@ export default function Courses() {
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-700 mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-primary-700 mb-4">
             Courses We <span className="text-accent-600">Offer</span>
           </h2>
-          <p className="text-neutral-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-600 text-lg sm:text-xl font-bold max-w-2xl mx-auto">
             Comprehensive programs designed to build strong foundations and develop future-ready skills
           </p>
         </div>
@@ -99,10 +168,10 @@ export default function Courses() {
                   <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition duration-300 text-accent-600">
                     {courseIcons[course.id]}
                   </div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-primary-700 mb-1 sm:mb-2 group-hover:text-accent-600 transition line-clamp-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-black text-primary-700 mb-1 sm:mb-2 group-hover:text-accent-600 transition line-clamp-2">
                     {course.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed line-clamp-2">
+                  <p className="text-sm sm:text-base font-bold text-neutral-600 leading-relaxed line-clamp-2">
                     {course.description}
                   </p>
                 </div>
@@ -117,7 +186,7 @@ export default function Courses() {
         {/* Our Learning Approach Section */}
         <div className="relative">
           <div className="absolute -top-8 -left-8 w-24 h-24 bg-accent-200 rounded-full opacity-20"></div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-primary-700 mb-12">Our Learning Approach</h3>
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary-700 mb-12">Our Learning Approach</h3>
 
           {/* Approach Steps */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
@@ -130,39 +199,23 @@ export default function Courses() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-base sm:text-lg font-bold text-primary-700 mb-1">{step.title}</h4>
-                    <p className="text-sm text-neutral-600">{step.desc}</p>
+                    <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-primary-700 mb-1">{step.title}</h4>
+                    <p className="text-base sm:text-lg font-bold text-neutral-600">{step.desc}</p>
                   </div>
                   {idx < 3 && <div className="text-2xl text-accent-400 flex-shrink-0">→</div>}
                 </div>
               ))}
             </div>
 
-            {/* Why Choose Features */}
+            {/* Why Choose Features - Scroll Stack */}
             <div className="relative">
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary-200 rounded-full opacity-20"></div>
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-accent-200 rounded-full opacity-30"></div>
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-primary-200 rounded-full opacity-20"></div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-3 sm:gap-4">
-                {[
-                  { icon: <FaChalkboardUser />, text: 'Smart Digital Board Classes' },
-                  { icon: <FaUsers />, text: 'Mentorship & Guidance' },
-                  { icon: <FaBook />, text: 'Small Batch Size' },
-                  { icon: <FaGraduationCap />, text: 'Focus on Concepts' },
-                  { icon: <FaHeadset />, text: 'Personalized Attention' },
-                  { icon: <FaStar />, text: 'Personality Development' },
-                  { icon: <FaChartLine />, text: 'Weekly Tests & Tracking' },
-                  { icon: <FaHandshake />, text: 'Safe & Motivating Environment' },
-                  { icon: <FaQuestion />, text: 'Doubt Sessions Anytime' },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2 sm:gap-4 py-2 sm:py-3 pl-3 sm:pl-4 pr-2 sm:pr-4 border-l-4 border-accent-400 hover:border-accent-600 hover:pl-4 sm:hover:pl-6 hover:bg-primary-50 rounded-r-lg transition-all duration-300 group"
-                  >
-                    <span className="text-lg sm:text-xl flex-shrink-0 text-accent-600 group-hover:scale-125 group-hover:text-accent-700 transition-transform duration-300">{item.icon}</span>
-                    <span className="text-xs sm:text-sm lg:text-base font-bold text-primary-700 group-hover:text-accent-600 transition-colors duration-300">{item.text}</span>
-                  </div>
-                ))}
-              </div>
+              
+              
+              {/* Scroll Stack Container */}
+              <ScrollStack />
             </div>
           </div>
         </div>

@@ -1,31 +1,31 @@
 'use client'
 
 import Image from 'next/image'
-import { FaMusic, FaDrum, FaWater, FaGamepad, FaBaseball, FaUsers, FaFire, FaRocket, FaGift, FaAward, FaLaptop, FaGlobe, FaNewspaper, FaClipboard } from 'react-icons/fa6'
+import { FaMusic, FaDrum, FaPerson, FaGamepad, FaTicket, FaUsers, FaDumbbell, FaLaptop, FaGlobe, FaNewspaper, FaRocket, FaGift, FaAward, FaCircleCheck, FaStar } from 'react-icons/fa6'
 
 const activities = [
-  { icon: <FaMusic />, label: 'Dance' },
-  { icon: <FaDrum />, label: 'Tabla' },
-  { icon: <FaWater />, label: 'Swimming' },
-  { icon: <FaGamepad />, label: 'Gaming' },
-  { icon: <FaBaseball />, label: 'Cricket' },
-  { icon: <FaFire />, label: 'Jumba' },
-  { icon: <FaClipboard />, label: 'Fitness' },
-  { icon: <FaUsers />, label: 'Activities' },
+  { icon: <FaMusic size={56} />, label: 'Music' },
+  { icon: <FaDrum size={56} />, label: 'Dance' },
+  { icon: <FaPerson size={56} />, label: 'Swimming' },
+  { icon: <FaGamepad size={56} />, label: 'Gaming' },
+  { icon: <FaTicket size={56} />, label: 'Cricket' },
+  { icon: <FaDumbbell size={56} />, label: 'Jumba' },
+  { icon: <FaDumbbell size={56} />, label: 'Fitness' },
+  { icon: <FaUsers size={56} />, label: 'Activities' },
 ]
 
 const focusAreas = [
-  { icon: <FaLaptop />, title: 'Computer Learning', desc: 'Master modern tech skills', image: '/Courseimage/dbdd642597a7b61e9608adc910334272.jpg.jpeg' },
-  { icon: <FaGlobe />, title: 'Geopolitical Studies', desc: 'Understand global affairs', image: '/Courseimage/190a975111240459b9775b610fb55bb4 (1).jpg.jpeg' },
-  { icon: <FaNewspaper />, title: 'Newspaper Reading', desc: 'Stay informed & aware', image: '/Courseimage/015c4ba03a6c6ebd2cac2f17e41e97b3.jpg.jpeg' },
-  { icon: <FaRocket />, title: 'Future Ready Skills', desc: 'Prepare for tomorrow', image: '/Courseimage/images (31).jpeg' },
+  { icon: <FaLaptop size={64} />, title: 'Computer Learning', desc: 'Master modern tech skills', image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.36 PM (2).jpeg' },
+  { icon: <FaGlobe size={64} />, title: 'Geopolitical Studies', desc: 'Understand global affairs', image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.35 PM (2).jpeg' },
+  { icon: <FaNewspaper size={64} />, title: 'Newspaper Reading', desc: 'Stay informed & aware', image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.36 PM.jpeg' },
+  { icon: <FaRocket size={64} />, title: 'Future Ready Skills', desc: 'Prepare for tomorrow', image: '/Courseimage/WhatsApp Image 2026-06-19 at 7.26.35 PM (1).jpeg' },
 ]
 
 const offers = [
-  { icon: <FaGift />, title: 'FREE DEMO CLASS', desc: 'Experience our teaching style' },
-  { icon: <FaUsers />, title: 'EARLY ADMISSION BENEFITS', desc: 'Exclusive perks for early joiners' },
-  { icon: <FaAward />, title: 'SPECIAL DISCOUNT', desc: 'Up to 20% off on fees' },
-  { icon: <FaRocket />, title: '100% SUCCESS RATE', desc: 'Proven track record' },
+  { icon: <FaGift size={56} />, title: 'FREE DEMO CLASS', desc: 'Experience our teaching style' },
+  { icon: <FaStar size={56} />, title: 'EARLY ADMISSION BENEFITS', desc: 'Exclusive perks for early joiners' },
+  { icon: <FaAward size={56} />, title: 'SPECIAL DISCOUNT', desc: 'Up to 20% off on fees' },
+  { icon: <FaCircleCheck size={56} />, title: '100% SUCCESS RATE', desc: 'Proven track record' },
 ]
 
 export default function WhyUs() {
@@ -65,7 +65,7 @@ export default function WhyUs() {
                 key={idx}
                 className="flex flex-col items-center justify-center gap-3 group cursor-pointer"
               >
-                <div className="text-4xl sm:text-5xl text-accent-600 group-hover:scale-110 transition duration-300 transform">
+                <div className="text-accent-600 group-hover:scale-110 transition duration-300 transform">
                   {activity.icon}
                 </div>
                 <p className="text-xs sm:text-sm font-semibold text-neutral-700 text-center group-hover:text-accent-600 transition">
@@ -105,7 +105,7 @@ export default function WhyUs() {
                     />
                   </div>
                 )}
-                <div className="text-4xl sm:text-5xl lg:text-6xl text-accent-600 mb-3 sm:mb-4 group-hover:scale-110 transition duration-300">
+                <div className="text-accent-600 mb-3 sm:mb-4 group-hover:scale-110 transition duration-300">
                   {item.icon}
                 </div>
                 <h4 className="text-base sm:text-lg lg:text-xl font-bold text-primary-900 mb-2 sm:mb-3 group-hover:text-accent-600 transition">
@@ -133,7 +133,7 @@ export default function WhyUs() {
             {offers.map((item, idx) => (
               <div key={idx} className="group">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="text-4xl text-accent-600 flex-shrink-0 group-hover:scale-110 transition duration-300">
+                  <div className="text-accent-600 flex-shrink-0 group-hover:scale-110 transition duration-300">
                     {item.icon}
                   </div>
                   <div>

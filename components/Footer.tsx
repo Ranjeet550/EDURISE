@@ -35,10 +35,10 @@ export default function Footer() {
               Learn Today, Lead Tomorrow - Your partner in academic excellence and personal growth.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="text-2xl text-blue-400 hover:scale-125 transition duration-300 transform">
+              <a href="https://www.facebook.com/people/Edurise-Academy/61590300124385/" target="_blank" rel="noopener noreferrer" className="text-2xl text-blue-400 hover:scale-125 transition duration-300 transform">
                 <FaFacebook />
               </a>
-              <a href="#" className="text-2xl text-pink-400 hover:scale-125 transition duration-300 transform">
+              <a href="https://www.instagram.com/eduriseacedemy?igsh=MTFlODl5dTV6ZnhjNg==" target="_blank" rel="noopener noreferrer" className="text-2xl text-pink-400 hover:scale-125 transition duration-300 transform">
                 <FaInstagram />
               </a>
               <a href="#" className="text-2xl text-red-400 hover:scale-125 transition duration-300 transform">

@@ -71,7 +71,7 @@ export default function About() {
               <div className="relative mb-8">
                 <div className="w-full aspect-square rounded-2xl overflow-hidden">
                   <Image
-                    src="/FOUNDER/IMG-20260525-WA0001.jpg"
+                    src="/FOUNDER/WhatsApp Image 2026-06-19 at 6.50.55 PM.jpeg"
                     alt="Vivek Sir - Founder"
                     width={400}
                     height={400}

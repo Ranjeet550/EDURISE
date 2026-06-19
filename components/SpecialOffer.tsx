@@ -80,57 +80,123 @@ export default function SpecialOffer() {
           </div>
         </div>
 
-        {/* Why Act Now Section - Timeline Style */}
+        {/* Why Act Now Section - Vertical Timeline with Icons */}
         <div className="mb-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12">Why You Should Act Now</h3>
+          <div className="text-center mb-16">
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Why You Should Act Now</h3>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Time is running out. Here's what makes this moment critical for your success.</p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Desktop: Vertical timeline with alternating layout */}
+          <div className="hidden lg:block max-w-4xl mx-auto">
+            {[
+              {
+                icon: FaRocket,
+                number: '01',
+                title: 'Limited Seats Available',
+                desc: 'Only 20 spots left in this batch',
+                color: 'from-blue-500 to-blue-600',
+                bgColor: 'bg-blue-50',
+              },
+              {
+                icon: FaClock,
+                number: '02',
+                title: '30-Day Offer Window',
+                desc: 'Offer expires in 30 days – don\'t wait',
+                color: 'from-orange-500 to-orange-600',
+                bgColor: 'bg-orange-50',
+              },
+              {
+                icon: FaGem,
+                number: '03',
+                title: 'Best Pricing Ever',
+                desc: 'Highest discount we\'ve ever offered',
+                color: 'from-purple-500 to-purple-600',
+                bgColor: 'bg-purple-50',
+              },
+              {
+                icon: FaCheck,
+                number: '04',
+                title: 'Instant Access',
+                desc: 'Start learning immediately after enrollment',
+                color: 'from-green-500 to-green-600',
+                bgColor: 'bg-green-50',
+              },
+            ].map((item, idx) => {
+              const ItemIcon = item.icon
+              const isEven = idx % 2 === 0
+              return (
+                <div key={idx} className="mb-12 last:mb-0">
+                  <div className={`flex gap-8 items-center ${!isEven && 'flex-row-reverse'}`}>
+                    {/* Timeline dot and line */}
+                    <div className="flex flex-col items-center">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition duration-300`}>
+                        <ItemIcon className="text-2xl" />
+                      </div>
+                      {idx < 3 && <div className="w-1 h-12 bg-gradient-to-b from-gray-300 to-transparent mt-4"></div>}
+                    </div>
+
+                    {/* Content Card */}
+                    <div className={`flex-1 ${item.bgColor} rounded-2xl p-8 border-l-4 border-gradient-to-b`} style={{ borderLeftColor: `var(--color-gradient-start)` }}>
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-sm font-bold text-gray-500">REASON {item.number}</span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
+                      <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Mobile & Tablet: Stacked cards layout */}
+          <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
               {
                 icon: FaRocket,
                 number: '01',
                 title: 'Limited Seats',
                 desc: 'Only 20 spots left in this batch',
+                color: 'from-blue-500 to-blue-600',
+                bgColor: 'bg-blue-50',
               },
               {
                 icon: FaClock,
                 number: '02',
                 title: '30-Day Window',
                 desc: 'Offer expires in 30 days',
+                color: 'from-orange-500 to-orange-600',
+                bgColor: 'bg-orange-50',
               },
               {
                 icon: FaGem,
                 number: '03',
                 title: 'Best Pricing',
                 desc: 'Highest discount ever offered',
+                color: 'from-purple-500 to-purple-600',
+                bgColor: 'bg-purple-50',
               },
               {
                 icon: FaCheck,
                 number: '04',
                 title: 'Instant Access',
                 desc: 'Start learning immediately',
+                color: 'from-green-500 to-green-600',
+                bgColor: 'bg-green-50',
               },
             ].map((item, idx) => {
               const ItemIcon = item.icon
               return (
-                <div key={idx} className="group relative">
-                  {/* Connecting line for desktop */}
-                  {idx < 3 && (
-                    <div className="hidden lg:block absolute top-16 -right-6 w-12 h-1 bg-gradient-to-r from-accent-400 to-transparent"></div>
-                  )}
-
-                  <div className="bg-white border-2 border-gray-100 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:border-accent-400 transition duration-300 h-full relative">
-                    <div className="absolute -top-6 left-6 bg-gradient-to-r from-primary-600 to-accent-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg">
-                      {item.number}
+                <div key={idx} className={`${item.bgColor} rounded-2xl p-6 border-t-4 border-gray-200 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 group`}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-lg flex items-center justify-center text-white shadow-md group-hover:scale-110 transition duration-300`}>
+                      <ItemIcon className="text-lg" />
                     </div>
-
-                    <div className="text-4xl text-accent-500 mb-6 mt-4 group-hover:scale-110 transition duration-300">
-                      <ItemIcon />
-                    </div>
-
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                    <span className="inline-block text-xs font-bold text-gray-600 bg-white px-3 py-1 rounded-full">#{item.number}</span>
                   </div>
+                  <h4 className="text-base font-bold text-gray-900 mb-1">{item.title}</h4>
+                  <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               )
             })}

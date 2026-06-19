@@ -115,7 +115,7 @@ export default function Contact() {
               <div className="flex-1 min-w-0">
                 <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-3">Visit Us</h4>
                 <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                  12/383, Joshi Road,<br />
+                  12/384, Joshi Road,<br />
                   Karolbagh, Near JMC Hospital,<br />
                   New Delhi - 110005
                 </p>
@@ -147,10 +147,10 @@ export default function Contact() {
               <div className="flex-1 min-w-0">
                 <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-4">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="text-2xl text-blue-600 hover:text-blue-700 hover:scale-125 transition duration-300 transform">
+                  <a href="https://www.facebook.com/people/Edurise-Academy/61590300124385/" target="_blank" rel="noopener noreferrer" className="text-2xl text-blue-600 hover:text-blue-700 hover:scale-125 transition duration-300 transform">
                     <FaFacebook />
                   </a>
-                  <a href="#" className="text-2xl text-pink-600 hover:text-pink-700 hover:scale-125 transition duration-300 transform">
+                  <a href="https://www.instagram.com/eduriseacedemy?igsh=MTFlODl5dTV6ZnhjNg==" target="_blank" rel="noopener noreferrer" className="text-2xl text-pink-600 hover:text-pink-700 hover:scale-125 transition duration-300 transform">
                     <FaInstagram />
                   </a>
                   <a href="#" className="text-2xl text-red-600 hover:text-red-700 hover:scale-125 transition duration-300 transform">

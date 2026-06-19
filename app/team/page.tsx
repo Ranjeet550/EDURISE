@@ -3,35 +3,34 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
-import { FaLinkedinIn, FaTwitter, FaEnvelope } from 'react-icons/fa6'
 
 export default function TeamPage() {
   const teamMembers = [
     {
       id: 1,
-      name: 'Vivek Sir',
+      name: 'Vivek Shankar',
       position: 'Founder & Director',
-      subject: 'Mathematics & Science',
-      image: '/FOUNDER/IMG-20260525-WA0001.jpg',
-      bio: 'Experienced educator with 10+ years in coaching',
-      expertise: ['Mathematics', 'Physics', 'Problem Solving']
+      subject: 'Mathematics & Geography',
+      image: '/teams/WhatsApp Image 2026-06-19 at 6.50.55 PM.jpeg',
+      bio: 'B.Sc in Mathematics, M.A in Geography. Experienced educator with 10+ years in coaching',
+      expertise: ['Mathematics', 'Geography', 'Problem Solving']
     },
     {
       id: 2,
-      name: 'Priya Singh',
-      position: 'Head of English Department',
-      subject: 'English & Communication',
-      image: '/teams/WhatsApp Image 2026-06-06 at 2.00.14 PM.jpeg',
-      bio: 'Specialist in personality development and English',
-      expertise: ['English Literature', 'Communication', 'Writing']
+      name: 'Smita',
+      position: 'Head of Science Department',
+      subject: 'Science & Health',
+      image: '/teams/WhatsApp Image 2026-06-19 at 6.50.55 PM (1).jpeg',
+      bio: 'Bachelor in Science. Specialist in making science concepts engaging and relatable',
+      expertise: ['Physics', 'Chemistry', 'Biology']
     },
     {
       id: 3,
       name: 'Amit Sharma',
       position: 'Science Coordinator',
       subject: 'Physics & Chemistry',
-      image: '/images/logo.jpg',
-      bio: 'Dedicated to making science concepts clear',
+      image: '/teams/WhatsApp Image 2026-06-19 at 6.50.56 PM.jpeg',
+      bio: 'Dedicated to making science concepts clear and practical',
       expertise: ['Physics', 'Chemistry', 'Experiments']
     },
     {
@@ -115,15 +114,7 @@ export default function TeamPage() {
                     ))}
                   </div>
 
-                  {/* Social Links */}
-                  <div className="flex gap-3 pt-4 border-t border-neutral-200">
-                    <button className="flex-1 flex items-center justify-center gap-2 bg-primary-50 hover:bg-primary-100 text-primary-700 py-2 rounded-lg transition duration-300 font-semibold text-sm">
-                      <FaLinkedinIn /> LinkedIn
-                    </button>
-                    <button className="flex-1 flex items-center justify-center gap-2 bg-accent-50 hover:bg-accent-100 text-accent-700 py-2 rounded-lg transition duration-300 font-semibold text-sm">
-                      <FaEnvelope /> Email
-                    </button>
-                  </div>
+
                 </div>
               </div>
             ))}

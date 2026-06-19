@@ -1,5 +1,30 @@
 import type { Metadata } from 'next'
+import { Poppins, Playfair_Display, Open_Sans, Montserrat } from 'next/font/google'
 import './globals.css'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['700', '800', '900'],
+  variable: '--font-playfair',
+})
+
+const googleSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-google-sans',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://edurise.com'),
@@ -61,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${playfair.variable} ${googleSans.variable} ${montserrat.variable}`}>
       <body className="bg-white text-gray-900">
         {children}
       </body>

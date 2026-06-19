@@ -1,143 +1,86 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-
 export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  
-  const carouselImages = [
-    {
-      src: '/HERO/pexels-ebahir-34086213.jpg',
-      title: 'Smart Learning',
-     
-    },
-    {
-      src: '/HERO/pexels-george-milton-7034613.jpg',
-      title: 'Personalized',
-      
-    },
-    {
-      src: '/HERO/pexels-martabranco-32046500.jpg',
-      title: 'Excellence',
-      
-    }
-  ]
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
-  
-  const goToSlide = (index: number) => setCurrentSlide(index)
-  
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
-  }
-  
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
-  }
+  const backgroundImage = '/HERO/pexels-ebahir-34086213.jpg'
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-200 via-orange-200 to-blue-300 min-h-96 md:min-h-96 flex items-center overflow-hidden rounded-2xl xs:rounded-2xl sm:rounded-3xl m-2 xs:m-2 sm:m-4 lg:m-8 p-4 xs:p-4 sm:p-6 lg:p-8">
-      {/* Animated Background Elements - Hidden on Mobile to reduce blur effect */}
+    <section 
+      className="relative min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-screen flex items-center justify-center overflow-hidden rounded-2xl xs:rounded-2xl sm:rounded-3xl m-1 xs:m-2 sm:m-4 lg:m-8 p-4 xs:p-6 sm:p-8 lg:p-8 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.35) 100%), url('${backgroundImage}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
 
-      <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-4 sm:gap-8 lg:gap-12 items-center min-h-80">
+      <div className="max-w-7xl mx-auto px-2 xs:px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex items-center justify-center pt-12 xs:pt-16 sm:pt-20 lg:pt-24">
+        <div className="grid grid-cols-1 gap-4 xs:gap-6 sm:gap-8 lg:gap-12 items-center w-full justify-center">
           {/* Left Content */}
-          <div className="space-y-4 xs:space-y-6 sm:space-y-8 py-8 xs:py-10 sm:py-12 lg:py-0">
+          <div className="space-y-3 xs:space-y-5 sm:space-y-8 flex flex-col justify-center items-center text-center max-w-3xl mx-auto w-full">
             {/* Badge - Mobile optimized */}
-            <div className="inline-flex items-center gap-2 bg-gray-100 px-2.5 xs:px-3 sm:px-4 py-1.5 xs:py-2 rounded-full border border-gray-300">
-              <span className="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
-              <p className="text-primary-600 text-xs font-bold truncate">🎓 500+ Students</p>
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 rounded-full border border-white/40 shadow-lg hover:bg-white/30 transition-all duration-300">
+              <span className="w-2.5 h-2.5 xs:w-3 xs:h-3 bg-yellow-300 rounded-full animate-pulse"></span>
+              <p style={{ fontFamily: 'var(--font-poppins)' }} className="text-white text-xs xs:text-sm font-bold">🎓 500+ Students</p>
             </div>
 
             {/* Main Heading - Mobile optimized */}
-            <div className="space-y-3 xs:space-y-4">
-              <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-primary-600 leading-tight italic tracking-wide">
-                Transform Your
-                <span className="block bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent font-black italic">
+            <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+              <div className="space-y-1 xs:space-y-2 sm:space-y-3">
+                <h1 style={{ fontFamily: 'var(--font-playfair)', animationDelay: '0s' }} className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent leading-tight xs:leading-tight sm:leading-snug tracking-tight xs:tracking-normal drop-shadow-xl animate-text-falling-staggered">
+                  Transform Your
+                </h1>
+                <h2 style={{ fontFamily: 'var(--font-playfair)', animationDelay: '0.3s' }} className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent leading-tight xs:leading-tight sm:leading-snug tracking-tight xs:tracking-normal drop-shadow-lg animate-text-falling-staggered">
+                  Future Goals
+                </h2>
+                <h3 style={{ fontFamily: 'var(--font-playfair)', animationDelay: '0.6s' }} className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent leading-tight xs:leading-tight sm:leading-snug tracking-tight xs:tracking-normal drop-shadow-xl animate-text-falling-staggered">
                   Academic Journey
-                </span>
-              </h1>
-              <p className="text-xs xs:text-sm sm:text-base md:text-lg text-primary-500 max-w-xl leading-relaxed font-semibold tracking-normal">
+                </h3>
+              </div>
+              <p style={{ fontFamily: 'var(--font-poppins)' }} className="text-sm xs:text-base sm:text-lg md:text-xl text-white font-bold max-w-2xl leading-relaxed xs:leading-relaxed sm:leading-loose tracking-normal drop-shadow-md bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent ">
                 Expert coaching for Classes 1-10 with personalized attention, digital board classes, and proven success strategies.
               </p>
             </div>
 
-            
+            {/* CTA Button - New for Mobile */}
+            <div className="flex gap-3 xs:gap-4 pt-2 xs:pt-4 sm:pt-6 w-full justify-center flex-wrap">
+              <button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-2.5 xs:py-3 px-6 xs:px-8 rounded-lg xs:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-xs xs:text-sm sm:text-base">
+                Get Started
+              </button>
+              <button className="border-2 border-white/60 hover:border-white text-white font-bold py-2.5 xs:py-3 px-6 xs:px-8 rounded-lg xs:rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-xs xs:text-sm sm:text-base">
+                Learn More
+              </button>
+            </div>
 
             {/* Trust Indicators - Mobile Optimized */}
-            <div className="grid grid-cols-3 gap-2 xs:gap-2 sm:gap-4 pt-3 xs:pt-4 sm:pt-6">
-              <div className="text-center xs:text-left">
-                <p className="text-base xs:text-lg sm:text-2xl md:text-3xl font-bold text-primary-600">10+</p>
-                <p className="text-xs text-primary-500 mt-0.5 truncate">Years</p>
+            <div className="grid grid-cols-3 gap-3 xs:gap-4 sm:gap-6 pt-4 xs:pt-6 sm:pt-8 w-full">
+              <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-3 xs:p-4 hover:bg-white/10 transition-all duration-300">
+                <p style={{ fontFamily: 'var(--font-playfair)' }} className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black text-yellow-300 drop-shadow-md">10+</p>
+                <p style={{ fontFamily: 'var(--font-poppins)' }} className="text-xs xs:text-sm text-white/90 mt-1 font-semibold">Years</p>
               </div>
-              <div className="text-center xs:text-left">
-                <p className="text-base xs:text-lg sm:text-2xl md:text-3xl font-bold text-primary-600">500+</p>
-                <p className="text-xs text-primary-500 mt-0.5 truncate">Students</p>
+              <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-3 xs:p-4 hover:bg-white/10 transition-all duration-300">
+                <p style={{ fontFamily: 'var(--font-playfair)' }} className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black text-yellow-300 drop-shadow-md">500+</p>
+                <p style={{ fontFamily: 'var(--font-poppins)' }} className="text-xs xs:text-sm text-white/90 mt-1 font-semibold">Students</p>
               </div>
-              <div className="text-center xs:text-left">
-                <p className="text-base xs:text-lg sm:text-2xl md:text-3xl font-bold text-primary-600">100%</p>
-                <p className="text-xs text-primary-500 mt-0.5 truncate">Success</p>
+              <div className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-3 xs:p-4 hover:bg-white/10 transition-all duration-300">
+                <p style={{ fontFamily: 'var(--font-playfair)' }} className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black text-yellow-300 drop-shadow-md">100%</p>
+                <p style={{ fontFamily: 'var(--font-poppins)' }} className="text-xs xs:text-sm text-white/90 mt-1 font-semibold">Success</p>
               </div>
             </div>
           </div>
 
-          {/* Right Content - Carousel */}
-          <div className="relative h-64 xs:h-72 sm:h-80 md:h-96 lg:h-[500px] items-center justify-center mt-8 lg:mt-0 flex w-full">
-            {/* Carousel Container */}
-            <div className="relative w-full h-full">
-              {/* Carousel Track */}
-              <div className="w-full h-full overflow-hidden bg-white rounded-full">
-                <div className="relative w-full h-full">
-                  {carouselImages.map((image, index) => (
-                    <div
-                      key={index}
-                      className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
-                        index === currentSlide ? 'opacity-100' : 'opacity-0'
-                      }`}
-                    >
-                      <img 
-                        src={image.src} 
-                        alt={image.title} 
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-end p-4 rounded-full">
-                        <h3 className="text-sm xs:text-base sm:text-lg font-bold text-white">{image.title}</h3>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Navigation Arrows */}
-
-              {/* Dots Indicator */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {carouselImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentSlide ? 'bg-primary-600 w-6' : 'bg-gray-400 hover:bg-gray-500'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
+          {/* Right Content - Background Image Area */}
+          <div className="relative h-64 xs:h-72 sm:h-80 md:h-96 lg:h-[500px] items-center justify-center mt-8 lg:mt-0 flex w-full invisible lg:visible hidden lg:block">
+            {/* This space is reserved for visual balance on larger screens */}
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator - Mobile Optimized */}
-      <div className="absolute bottom-2 xs:bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="flex flex-col items-center gap-1 xs:gap-1.5 animate-bounce">
-          <p className="text-primary-600 text-xs font-bold">Scroll</p>
-          <svg className="w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="absolute bottom-3 xs:bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden xs:flex">
+        <div className="flex flex-col items-center gap-1.5 xs:gap-2 animate-bounce">
+          <p style={{ fontFamily: 'var(--font-poppins)' }} className="text-white text-xs xs:text-sm font-bold drop-shadow-md">Scroll</p>
+          <svg className="w-4 xs:w-5 sm:w-6 h-4 xs:h-5 sm:h-6 text-yellow-300 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>

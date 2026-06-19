@@ -9,28 +9,28 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#f0f4f9',
-          100: '#e0e8f2',
-          200: '#c1d1e5',
-          300: '#a2bad8',
-          400: '#83a3cb',
-          500: '#648cbe',
-          600: '#1E3A8A', // Deep Navy
-          700: '#1a2f73',
-          800: '#16245c',
-          900: '#121945',
+          50: '#e3f2fd',
+          100: '#bbdefb',
+          200: '#90caf9',
+          300: '#64b5f6',
+          400: '#42a5f5',
+          500: '#2196f3', // Light Blue
+          600: '#1e88e5',
+          700: '#1976d2',
+          800: '#1565c0',
+          900: '#0d47a1',
         },
         accent: {
           50: '#fffbf0',
-          100: '#fff7e6',
-          200: '#ffeccc',
-          300: '#ffe0b3',
-          400: '#ffd699',
-          500: '#ffcc80',
-          600: '#F59E0B', // Bright Marigold/Gold
-          700: '#e68a00',
-          800: '#cc7700',
-          900: '#b36400',
+          100: '#fff8e1',
+          200: '#fff3cd',
+          300: '#ffeebd',
+          400: '#ffe9ad',
+          500: '#ffe49d',
+          600: '#f9a825', // Mustard Yellow
+          700: '#f59e0b',
+          800: '#f08c00',
+          900: '#e65100',
         },
         neutral: {
           50: '#f9fafb',
@@ -39,7 +39,7 @@ module.exports = {
           300: '#d1d5db',
           400: '#9ca3af',
           500: '#6b7280',
-          600: '#4B5563', // Slate Gray
+          600: '#1565c0', // Dark Blue
           700: '#374151',
           800: '#1f2937',
           900: '#111827',
@@ -47,6 +47,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        'google-sans': ['var(--font-google-sans)', 'system-ui', 'sans-serif'],
+        'fancy': ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
       animation: {
         blob: 'blob 7s infinite',
