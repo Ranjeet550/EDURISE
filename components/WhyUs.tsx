@@ -1,6 +1,7 @@
 'use client'
 
-import { FaMusic, FaDrum, FaWater, FaGamepad, FaBaseball, FaUsers, FaBrain, FaFire, FaHeadset, FaRocket, FaGift, FaAward, FaLaptop, FaGlobe, FaNewspaper, FaClipboard } from 'react-icons/fa6'
+import Image from 'next/image'
+import { FaMusic, FaDrum, FaWater, FaGamepad, FaBaseball, FaUsers, FaFire, FaRocket, FaGift, FaAward, FaLaptop, FaGlobe, FaNewspaper, FaClipboard } from 'react-icons/fa6'
 
 const activities = [
   { icon: <FaMusic />, label: 'Dance' },
@@ -14,9 +15,9 @@ const activities = [
 ]
 
 const focusAreas = [
-  { icon: <FaLaptop />, title: 'Computer Learning', desc: 'Master modern tech skills' },
-  { icon: <FaGlobe />, title: 'Geopolitical Studies', desc: 'Understand global affairs' },
-  { icon: <FaNewspaper />, title: 'Newspaper Reading', desc: 'Stay informed & aware' },
+  { icon: <FaLaptop />, title: 'Computer Learning', desc: 'Master modern tech skills', image: '/Courseimage/dbdd642597a7b61e9608adc910334272.jpg.jpeg' },
+  { icon: <FaGlobe />, title: 'Geopolitical Studies', desc: 'Understand global affairs', image: '/Courseimage/190a975111240459b9775b610fb55bb4 (1).jpg.jpeg' },
+  { icon: <FaNewspaper />, title: 'Newspaper Reading', desc: 'Stay informed & aware', image: '/Courseimage/015c4ba03a6c6ebd2cac2f17e41e97b3.jpg.jpeg' },
   { icon: <FaRocket />, title: 'Future Ready Skills', desc: 'Prepare for tomorrow' },
 ]
 
@@ -90,19 +91,30 @@ export default function WhyUs() {
             <div className="w-20 h-1.5 bg-accent-600 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {focusAreas.map((item, idx) => (
-              <div key={idx} className="group">
-                <div className="text-5xl sm:text-6xl text-accent-600 mb-5 group-hover:scale-110 transition duration-300">
+              <div key={idx} className="group flex flex-col h-full">
+                {item.image && (
+                  <div className="mb-3 sm:mb-4 rounded-lg overflow-hidden relative w-full h-40 sm:h-48 lg:h-56">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      priority={idx < 2}
+                      className="object-cover group-hover:scale-110 transition duration-300"
+                    />
+                  </div>
+                )}
+                <div className="text-4xl sm:text-5xl lg:text-6xl text-accent-600 mb-3 sm:mb-4 group-hover:scale-110 transition duration-300">
                   {item.icon}
                 </div>
-                <h4 className="text-lg sm:text-xl font-bold text-primary-900 mb-3 group-hover:text-accent-600 transition">
+                <h4 className="text-base sm:text-lg lg:text-xl font-bold text-primary-900 mb-2 sm:mb-3 group-hover:text-accent-600 transition">
                   {item.title}
                 </h4>
-                <p className="text-neutral-600 text-base leading-relaxed">
+                <p className="text-neutral-600 text-sm sm:text-base leading-relaxed flex-grow">
                   {item.desc}
                 </p>
-                <div className="mt-4 h-1 w-12 bg-accent-600 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                <div className="mt-3 sm:mt-4 h-1 w-12 bg-accent-600 opacity-0 group-hover:opacity-100 transition duration-300"></div>
               </div>
             ))}
           </div>

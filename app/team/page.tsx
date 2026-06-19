@@ -9,11 +9,11 @@ export default function TeamPage() {
   const teamMembers = [
     {
       id: 1,
-      name: 'Rajesh Kumar',
+      name: 'Vivek Sir',
       position: 'Founder & Director',
       subject: 'Mathematics & Science',
       image: '/FOUNDER/IMG-20260525-WA0001.jpg',
-      bio: 'Experienced educator with 15+ years in coaching',
+      bio: 'Experienced educator with 10+ years in coaching',
       expertise: ['Mathematics', 'Physics', 'Problem Solving']
     },
     {
@@ -21,7 +21,7 @@ export default function TeamPage() {
       name: 'Priya Singh',
       position: 'Head of English Department',
       subject: 'English & Communication',
-      image: '/images/logo.jpg',
+      image: '/teams/WhatsApp Image 2026-06-06 at 2.00.14 PM.jpeg',
       bio: 'Specialist in personality development and English',
       expertise: ['English Literature', 'Communication', 'Writing']
     },
