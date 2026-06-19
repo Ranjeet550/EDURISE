@@ -91,13 +91,13 @@ export default function Courses() {
           ))}
         </div>
 
-        {/* Our Approach Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-          {/* Learning Approach */}
-          <div className="relative">
-            <div className="absolute -top-8 -left-8 w-24 h-24 bg-accent-200 rounded-full opacity-20"></div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary-700 mb-8">Our Learning Approach</h3>
+        {/* Our Learning Approach Section */}
+        <div className="relative">
+          <div className="absolute -top-8 -left-8 w-24 h-24 bg-accent-200 rounded-full opacity-20"></div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-primary-700 mb-12">Our Learning Approach</h3>
 
+          {/* Approach Steps */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
             <div className="space-y-6">
               {approachSteps.map((step, idx) => (
                 <div key={idx} className="flex gap-4 items-start group">
@@ -114,37 +114,35 @@ export default function Courses() {
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* Why Choose Section */}
-          <div className="relative">
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary-200 rounded-full opacity-20"></div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary-700 mb-8">Why Choose EDU RISE?</h3>
+            {/* Why Choose Features */}
+            <div className="relative">
+              <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary-200 rounded-full opacity-20"></div>
+              
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { icon: <FaChalkboardUser />, text: 'Smart Digital Board Classes' },
-                { icon: <FaUsers />, text: 'Mentorship & Guidance' },
-                { icon: <FaBook />, text: 'Small Batch Size' },
-                { icon: <FaGraduationCap />, text: 'Focus on Concepts' },
-                { icon: <FaHeadset />, text: 'Personalized Attention' },
-                { icon: <FaStar />, text: 'Personality Development' },
-                { icon: <FaChartLine />, text: 'Weekly Tests & Tracking' },
-                { icon: <FaHandshake />, text: 'Safe & Motivating Environment' },
-                { icon: <FaQuestion />, text: 'Doubt Sessions Anytime' },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-3 p-3 sm:p-4 bg-white rounded-xl shadow-md hover:shadow-lg hover:bg-primary-50 transition duration-300 border border-primary-100"
-                >
-                  <span className="text-lg flex-shrink-0 text-accent-600">{item.icon}</span>
-                  <span className="text-xs sm:text-sm font-semibold text-primary-700">{item.text}</span>
-                </div>
-              ))}
-            </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: <FaChalkboardUser />, text: 'Smart Digital Board Classes' },
+                  { icon: <FaUsers />, text: 'Mentorship & Guidance' },
+                  { icon: <FaBook />, text: 'Small Batch Size' },
+                  { icon: <FaGraduationCap />, text: 'Focus on Concepts' },
+                  { icon: <FaHeadset />, text: 'Personalized Attention' },
+                  { icon: <FaStar />, text: 'Personality Development' },
+                  { icon: <FaChartLine />, text: 'Weekly Tests & Tracking' },
+                  { icon: <FaHandshake />, text: 'Safe & Motivating Environment' },
+                  { icon: <FaQuestion />, text: 'Doubt Sessions Anytime' },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 p-3 sm:p-4 bg-white rounded-xl shadow-md hover:shadow-lg hover:bg-primary-50 transition duration-300 border border-primary-100"
+                  >
+                    <span className="text-lg flex-shrink-0 text-accent-600">{item.icon}</span>
+                    <span className="text-xs sm:text-sm font-semibold text-primary-700">{item.text}</span>
+                  </div>
+                ))}
+              </div>
 
-            <div className="mt-8 p-6 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-2xl text-center shadow-lg">
-              <p className="text-sm sm:text-base font-bold flex items-center justify-center gap-2"><FaStar /> 10+ YEARS OF EXCELLENCE <FaStar /></p>
+              
             </div>
           </div>
         </div>

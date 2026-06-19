@@ -60,82 +60,76 @@ export default function Contact() {
         {/* Contact Form and Info */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Contact Information */}
-          <div className="space-y-6">
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary-700 mb-8">Contact Information</h3>
+          <div className="space-y-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary-700">Contact Information</h3>
 
             {/* Phone */}
-            <div className="group">
-              <div className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-100 hover:border-accent-300">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-lg group-hover:scale-110 transition duration-300">
-                    <FaPhone className="text-2xl" />
-                  </div>
+            <div className="group flex items-start gap-6 pb-8 border-b border-primary-100 last:border-b-0">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 text-white group-hover:scale-110 transition duration-300">
+                  <FaPhone className="text-xl" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-2">Call Us</h4>
-                  <p className="text-base sm:text-lg font-semibold text-accent-600 mb-1">+91 8799722327</p>
-                  <p className="text-base sm:text-lg font-semibold text-accent-600">+91 9811012150</p>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-3">Call Us</h4>
+                <div className="space-y-2">
+                  <p className="text-base sm:text-lg font-semibold text-accent-600 hover:text-accent-700 transition">+91 8799722327</p>
+                  <p className="text-base sm:text-lg font-semibold text-accent-600 hover:text-accent-700 transition">+91 9811012150</p>
                 </div>
               </div>
             </div>
 
             {/* Address */}
-            <div className="group">
-              <div className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-100 hover:border-accent-300">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-lg group-hover:scale-110 transition duration-300">
-                    <FaLocationDot className="text-2xl" />
-                  </div>
+            <div className="group flex items-start gap-6 pb-8 border-b border-primary-100 last:border-b-0">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 text-white group-hover:scale-110 transition duration-300">
+                  <FaLocationDot className="text-xl" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-2">Visit Us</h4>
-                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                    12/383, Joshi Road,<br />
-                    Karolbagh, Near JMC Hospital,<br />
-                    New Delhi - 110005
-                  </p>
-                </div>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-3">Visit Us</h4>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  12/383, Joshi Road,<br />
+                  Karolbagh, Near JMC Hospital,<br />
+                  New Delhi - 110005
+                </p>
               </div>
             </div>
 
             {/* Services */}
-            <div className="group">
-              <div className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-100 hover:border-accent-300">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-lg group-hover:scale-110 transition duration-300">
-                    <FaCar className="text-2xl" />
-                  </div>
+            <div className="group flex items-start gap-6 pb-8 border-b border-primary-100 last:border-b-0">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 text-white group-hover:scale-110 transition duration-300">
+                  <FaCar className="text-xl" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-2">Pick & Drop</h4>
-                  <p className="text-sm sm:text-base text-neutral-700">
-                    Complimentary pick and drop service available for all students
-                  </p>
-                </div>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-3">Pick & Drop</h4>
+                <p className="text-sm sm:text-base text-neutral-700">
+                  Complimentary pick and drop service available for all students
+                </p>
               </div>
             </div>
 
             {/* Social Media */}
-            <div className="group">
-              <div className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-100 hover:border-accent-300">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-lg group-hover:scale-110 transition duration-300">
-                    <FaFacebook className="text-2xl" />
-                  </div>
+            <div className="group flex items-start gap-6">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 text-white group-hover:scale-110 transition duration-300">
+                  <FaFacebook className="text-xl" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-3">Follow Us</h4>
-                  <div className="flex gap-4">
-                    <a href="#" className="text-3xl text-blue-600 hover:scale-125 transition duration-300 transform">
-                      <FaFacebook />
-                    </a>
-                    <a href="#" className="text-3xl text-pink-600 hover:scale-125 transition duration-300 transform">
-                      <FaInstagram />
-                    </a>
-                    <a href="#" className="text-3xl text-red-600 hover:scale-125 transition duration-300 transform">
-                      <FaYoutube />
-                    </a>
-                  </div>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-lg sm:text-xl font-bold text-primary-700 mb-4">Follow Us</h4>
+                <div className="flex gap-4">
+                  <a href="#" className="text-2xl text-blue-600 hover:text-blue-700 hover:scale-125 transition duration-300 transform">
+                    <FaFacebook />
+                  </a>
+                  <a href="#" className="text-2xl text-pink-600 hover:text-pink-700 hover:scale-125 transition duration-300 transform">
+                    <FaInstagram />
+                  </a>
+                  <a href="#" className="text-2xl text-red-600 hover:text-red-700 hover:scale-125 transition duration-300 transform">
+                    <FaYoutube />
+                  </a>
                 </div>
               </div>
             </div>

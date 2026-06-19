@@ -1,108 +1,160 @@
 'use client'
 
-import { FaGift, FaClock, FaRocket, FaGem } from 'react-icons/fa6'
+import { FaGift, FaClock, FaRocket, FaGem, FaCheck } from 'react-icons/fa6'
 
 export default function SpecialOffer() {
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <section className="py-20 sm:py-28 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      {/* Animated background elements */}
+      <div className="absolute top-20 right-0 w-80 h-80 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <div className="inline-block bg-accent-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-lg animate-pulse flex items-center gap-2">
-              <FaGift className="text-lg" />
-              LIMITED PERIOD OFFER!
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              Special Admission <span className="text-accent-300">Benefits</span>
-            </h2>
-
-            <p className="text-base sm:text-lg text-neutral-100 leading-relaxed">
-              Join EDU RISE today and unlock exclusive benefits designed to accelerate your learning journey.
-            </p>
-
-            <div className="space-y-4">
-              {[
-                { icon: FaGift, text: 'FREE DEMO CLASS' },
-                { icon: FaClock, text: 'EARLY ADMISSION BENEFITS' },
-                { icon: FaGem, text: 'UP TO 20% DISCOUNT' },
-                { icon: FaRocket, text: 'PRIORITY BATCH PLACEMENT' },
-              ].map((item, idx) => {
-                const ItemIcon = item.icon
-                return (
-                  <div key={idx} className="flex items-center gap-4 p-4 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300">
-                    <span className="text-2xl sm:text-3xl flex-shrink-0">
-                      <ItemIcon />
-                    </span>
-                    <span className="font-bold text-base sm:text-lg">{item.text}</span>
-                  </div>
-                )
-              })}
-            </div>
-
-            <button className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 sm:px-12 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:from-accent-600 hover:to-accent-700 transition duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto">
-              Claim Your Offer Now
-            </button>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main Hero Section */}
+        <div className="text-center mb-16 sm:mb-20">
+          <div className="inline-flex items-center justify-center gap-2 mb-6 px-5 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-bold shadow-sm border border-accent-200">
+            <FaGift className="text-lg animate-bounce" style={{ animationDelay: '0.2s' }} />
+            LIMITED TIME OFFER
           </div>
 
-          {/* Right Content - Why Act Now */}
-          <div className="relative">
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-accent-400 rounded-full opacity-10"></div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+            Your Path to Success <br />
+            <span className="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Starts Here</span>
+          </h2>
 
-            <h3 className="text-2xl sm:text-3xl font-bold mb-8">Why Act Now?</h3>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Join thousands of successful students who transformed their careers with EDU RISE. Get exclusive admission benefits today.
+          </p>
+        </div>
 
-            <div className="space-y-4">
-              {[
-                {
-                  icon: FaRocket,
-                  title: 'Limited Seats Available',
-                  desc: 'Only 20 seats left for this batch',
-                },
-                {
-                  icon: FaClock,
-                  title: 'Time-Sensitive Offer',
-                  desc: 'Valid only for the next 30 days',
-                },
-                {
-                  icon: FaRocket,
-                  title: 'Early Bird Advantage',
-                  desc: 'Get priority placement in batches',
-                },
-                {
-                  icon: FaGem,
-                  title: 'Special Discount',
-                  desc: 'Up to 20% off on annual fees',
-                },
-              ].map((item, idx) => {
-                const ItemIcon = item.icon
-                return (
-                  <div
-                    key={idx}
-                    className="group p-5 sm:p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300 transform hover:-translate-y-1"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="text-3xl sm:text-4xl flex-shrink-0 group-hover:scale-110 transition duration-300">
-                        <ItemIcon />
-                      </span>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-base sm:text-lg mb-1">{item.title}</h4>
-                        <p className="text-xs sm:text-sm text-neutral-200">{item.desc}</p>
-                      </div>
-                    </div>
+        {/* Main Offer Banner */}
+        <div className="mb-16 relative">
+          <div className="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 rounded-3xl p-1 shadow-2xl">
+            <div className="bg-gradient-to-br from-primary-700 to-primary-900 rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+              {/* Corner decorations */}
+              <div className="absolute top-6 right-6 text-accent-400 opacity-10 text-9xl">
+                <FaGift />
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
+                {/* Left side - Main offer */}
+                <div className="text-white">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-1 bg-gradient-to-r from-accent-400 to-accent-300"></div>
+                    <span className="text-accent-300 font-bold text-sm">EXCLUSIVE BENEFITS</span>
                   </div>
-                )
-              })}
-            </div>
 
-            {/* CTA Button */}
-            <button className="w-full mt-8 bg-white text-primary-700 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-neutral-100 transition duration-300 shadow-lg transform hover:scale-105">
-              Get Started Today
-            </button>
+                  <h3 className="text-3xl sm:text-4xl font-bold mb-6">
+                    Special Admission Package
+                  </h3>
+
+                  <p className="text-neutral-200 text-lg mb-8 leading-relaxed">
+                    Limited to 20 seats only. Join this batch and get premium benefits designed to fast-track your success.
+                  </p>
+
+                  <button className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:from-accent-600 hover:to-accent-700 transition duration-300 shadow-xl transform hover:scale-105 w-full sm:w-auto">
+                    Claim Your Offer
+                  </button>
+                </div>
+
+                {/* Right side - Benefits Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { icon: FaGift, label: 'FREE Demo', value: 'Class' },
+                    { icon: FaClock, label: '50% OFF', value: 'Fees' },
+                    { icon: FaRocket, label: 'Priority', value: 'Placement' },
+                    { icon: FaCheck, label: '100%', value: 'Guarantee' },
+                  ].map((item, idx) => {
+                    const ItemIcon = item.icon
+                    return (
+                      <div key={idx} className="bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 rounded-2xl p-5 sm:p-6 text-center hover:bg-opacity-20 transition duration-300 transform hover:-translate-y-1">
+                        <ItemIcon className="text-3xl sm:text-4xl text-accent-300 mx-auto mb-3" />
+                        <p className="text-white font-bold text-sm sm:text-base">{item.label}</p>
+                        <p className="text-accent-200 font-bold text-xs sm:text-sm">{item.value}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Act Now Section - Timeline Style */}
+        <div className="mb-16">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-12">Why You Should Act Now</h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: FaRocket,
+                number: '01',
+                title: 'Limited Seats',
+                desc: 'Only 20 spots left in this batch',
+              },
+              {
+                icon: FaClock,
+                number: '02',
+                title: '30-Day Window',
+                desc: 'Offer expires in 30 days',
+              },
+              {
+                icon: FaGem,
+                number: '03',
+                title: 'Best Pricing',
+                desc: 'Highest discount ever offered',
+              },
+              {
+                icon: FaCheck,
+                number: '04',
+                title: 'Instant Access',
+                desc: 'Start learning immediately',
+              },
+            ].map((item, idx) => {
+              const ItemIcon = item.icon
+              return (
+                <div key={idx} className="group relative">
+                  {/* Connecting line for desktop */}
+                  {idx < 3 && (
+                    <div className="hidden lg:block absolute top-16 -right-6 w-12 h-1 bg-gradient-to-r from-accent-400 to-transparent"></div>
+                  )}
+
+                  <div className="bg-white border-2 border-gray-100 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:border-accent-400 transition duration-300 h-full relative">
+                    <div className="absolute -top-6 left-6 bg-gradient-to-r from-primary-600 to-accent-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg">
+                      {item.number}
+                    </div>
+
+                    <div className="text-4xl text-accent-500 mb-6 mt-4 group-hover:scale-110 transition duration-300">
+                      <ItemIcon />
+                    </div>
+
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Bottom CTA Section */}
+        <div className="relative bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl border-2 border-primary-100 p-8 sm:p-12 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              Don't Miss Out on This Opportunity
+            </h3>
+            <p className="text-gray-600 text-lg mb-8">
+              Join successful students and transform your career with world-class education.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-3 rounded-2xl font-bold text-lg hover:shadow-lg transition duration-300 transform hover:scale-105">
+                Apply Now
+              </button>
+              <button className="border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-2xl font-bold text-lg hover:bg-primary-50 transition duration-300">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
       </div>

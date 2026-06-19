@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900 min-h-screen flex items-center overflow-hidden">
+    <section className="relative bg-gradient-to-br from-primary-600 via-primary-500 to-accent-900 min-h-screen flex items-center overflow-hidden rounded-3xl m-4 sm:m-6 lg:m-8">
       {/* Animated Background Elements */}
       <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute -bottom-8 left-10 sm:left-20 w-72 sm:w-96 h-72 sm:h-96 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
@@ -20,13 +20,13 @@ export default function Hero() {
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight italic tracking-wide">
                 Transform Your
-                <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent font-black italic">
                   Academic Journey
                 </span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-neutral-200 max-w-xl leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-neutral-200 max-w-xl leading-relaxed font-light tracking-normal">
                 Expert coaching for Classes 1-10 with personalized attention, digital board classes, and proven success strategies. Your path to excellence starts here.
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function Hero() {
             {/* Floating Images Container */}
             <div className="relative w-full h-full flex items-center justify-center">
               {/* Main Floating Image - Center */}
-              <div className="absolute w-56 sm:w-64 md:w-72 h-56 sm:h-64 md:h-72 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300 z-20 animate-float">
+              <div className="absolute w-56 sm:w-64 md:w-72 h-56 sm:h-64 md:h-72 rounded-full shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300 z-20 animate-float">
                 <img 
                   src="/HERO/pexels-ebahir-34086213.jpg" 
                   alt="Smart Learning" 
@@ -82,7 +82,7 @@ export default function Hero() {
               </div>
 
               {/* Floating Image 1 - Top Right */}
-              <div className="absolute top-8 sm:top-12 -right-8 sm:right-0 md:right-8 w-44 sm:w-52 md:w-60 h-44 sm:h-52 md:h-60 rounded-3xl shadow-xl overflow-hidden transform hover:scale-110 transition duration-300 z-10 animate-float-delay-1">
+              <div className="absolute top-8 sm:top-12 -right-8 sm:right-0 md:right-8 w-44 sm:w-52 md:w-60 h-44 sm:h-52 md:h-60 rounded-full shadow-xl overflow-hidden transform hover:scale-110 transition duration-300 z-10 animate-float-delay-1">
                 <img 
                   src="/HERO/pexels-george-milton-7034613.jpg" 
                   alt="Personalized Learning" 
@@ -95,7 +95,7 @@ export default function Hero() {
               </div>
 
               {/* Floating Image 2 - Bottom Left */}
-              <div className="absolute bottom-8 sm:bottom-12 -left-8 sm:left-0 md:left-8 w-44 sm:w-52 md:w-60 h-44 sm:h-52 md:h-60 rounded-3xl shadow-xl overflow-hidden transform hover:scale-110 transition duration-300 z-10 animate-float-delay-2">
+              <div className="absolute bottom-8 sm:bottom-12 -left-8 sm:left-0 md:left-8 w-44 sm:w-52 md:w-60 h-44 sm:h-52 md:h-60 rounded-full shadow-xl overflow-hidden transform hover:scale-110 transition duration-300 z-10 animate-float-delay-2">
                 <img 
                   src="/HERO/pexels-martabranco-32046500.jpg" 
                   alt="Excellence" 
@@ -112,7 +112,7 @@ export default function Hero() {
              
 
               {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl blur-3xl opacity-20 -z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full blur-3xl opacity-20 -z-10"></div>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaBars, FaX, FaHouse, FaBook, FaLightbulb, FaPhone, FaArrowRight, FaCircleInfo } from 'react-icons/fa6'
+import { FaBars, FaX, FaHouse, FaBook, FaLightbulb, FaPhone, FaArrowRight, FaCircleInfo, FaImages, FaUsers } from 'react-icons/fa6'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,6 +12,8 @@ export default function Header() {
     { href: '/', label: 'Home', icon: <FaHouse /> },
     { href: '/#about', label: 'About', icon: <FaCircleInfo /> },
     { href: '/#courses', label: 'Courses', icon: <FaBook /> },
+    { href: '/gallery', label: 'Gallery', icon: <FaImages /> },
+    { href: '/team', label: 'Team', icon: <FaUsers /> },
     { href: '/#why-us', label: 'Why Us', icon: <FaLightbulb /> },
     { href: '/#contact', label: 'Contact', icon: <FaPhone /> },
   ]

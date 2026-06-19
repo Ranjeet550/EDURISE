@@ -12,8 +12,8 @@ export default function Footer() {
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -126,15 +126,15 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-primary-600 pt-8 sm:pt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+        <div className="border-t border-primary-600 pt-4 sm:pt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center text-center sm:text-left">
             {/* Copyright */}
-            <p className="text-neutral-400 text-xs sm:text-sm text-center sm:text-left">
+            <p className="text-neutral-400 text-xs sm:text-sm">
               © {currentYear} Edu Rise Coaching Institute. All rights reserved.
             </p>
 
             {/* Links */}
-            <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 text-xs sm:text-sm">
+            <div className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-4 text-xs sm:text-sm">
               <a href="#" className="text-neutral-400 hover:text-accent-400 transition duration-300">
                 Privacy Policy
               </a>
@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Badge */}
-        <div className="mt-8 text-center">
+        <div className="mt-4 text-center">
           <div className="inline-block bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2 rounded-full text-xs font-bold shadow-lg">
             ✨ Building Confidence, Shaping Futures ✨
           </div>
