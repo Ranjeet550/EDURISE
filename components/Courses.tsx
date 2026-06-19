@@ -58,7 +58,7 @@ export default function Courses() {
       <div className="absolute top-20 left-0 w-72 h-72 bg-accent-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-700 mb-4">
@@ -70,14 +70,14 @@ export default function Courses() {
         </div>
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-8 mb-16">
           {courses.map((course) => (
             <div
               key={course.id}
-              className="group relative bg-gradient-to-br from-white to-primary-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-primary-100 flex flex-col h-full"
+              className="group relative w-full bg-gradient-to-br from-white to-primary-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-primary-100 flex flex-col h-full min-h-96"
             >
               {/* Course Image - Full and Responsive */}
-              <div className="relative w-full h-56 sm:h-52 md:h-56 lg:h-48 overflow-hidden bg-primary-100">
+              <div className="relative w-full h-72 sm:h-64 lg:h-80 overflow-hidden bg-primary-100">
                 <Image
                   src={course.image}
                   alt={course.title}
@@ -91,7 +91,7 @@ export default function Courses() {
               </div>
 
               {/* Course Content */}
-              <div className="p-4 sm:p-5 lg:p-6 relative flex-1 flex flex-col">
+              <div className="p-6 sm:p-7 lg:p-8 relative flex-1 flex flex-col">
                 {/* Background Accent */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-accent-100 rounded-full mix-blend-multiply filter blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
