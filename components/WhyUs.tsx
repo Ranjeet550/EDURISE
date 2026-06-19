@@ -18,7 +18,7 @@ const focusAreas = [
   { icon: <FaLaptop />, title: 'Computer Learning', desc: 'Master modern tech skills', image: '/Courseimage/dbdd642597a7b61e9608adc910334272.jpg.jpeg' },
   { icon: <FaGlobe />, title: 'Geopolitical Studies', desc: 'Understand global affairs', image: '/Courseimage/190a975111240459b9775b610fb55bb4 (1).jpg.jpeg' },
   { icon: <FaNewspaper />, title: 'Newspaper Reading', desc: 'Stay informed & aware', image: '/Courseimage/015c4ba03a6c6ebd2cac2f17e41e97b3.jpg.jpeg' },
-  { icon: <FaRocket />, title: 'Future Ready Skills', desc: 'Prepare for tomorrow' },
+  { icon: <FaRocket />, title: 'Future Ready Skills', desc: 'Prepare for tomorrow', image: '/Courseimage/images (31).jpeg' },
 ]
 
 const offers = [
