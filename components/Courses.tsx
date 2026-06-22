@@ -138,49 +138,130 @@ export default function Courses() {
           </p>
         </div>
 
-        {/* Courses Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-8 mb-16">
-          {courses.map((course) => (
-            <div
-              key={course.id}
-              className="group relative w-full bg-gradient-to-br from-white to-primary-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-primary-100 flex flex-col h-full min-h-96"
-            >
-              {/* Course Image - Full and Responsive */}
-              <div className="relative w-full h-72 sm:h-64 lg:h-80 overflow-hidden bg-primary-100">
-                <Image
-                  src={course.image}
-                  alt={course.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                  className="object-cover object-center group-hover:scale-110 transition duration-300"
-                  priority={false}
-                  quality={90}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
+        {/* Courses Marquee Carousel */}
+        <div className="mb-16 overflow-hidden">
+          <style>{`
+            @keyframes marquee {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-100%);
+              }
+            }
+            
+            .marquee-container {
+              display: flex;
+              animation: marquee 40s linear infinite;
+            }
+            
+            .marquee-container:hover {
+              animation-play-state: paused;
+            }
+            
+            .marquee-item {
+              min-width: 100%;
+              flex-shrink: 0;
+            }
+          `}</style>
+          
+          <div className="relative w-full overflow-hidden bg-gradient-to-r from-transparent via-transparent to-transparent">
+            {/* Fade edges for smooth effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10"></div>
+            
+            <div className="marquee-container" style={{ animationDuration: '20s' }}>
+              {/* Original courses */}
+              <div className="marquee-item px-4 flex gap-6 sm:gap-8">
+                {courses.map((course) => (
+                  <div
+                    key={`${course.id}-1`}
+                    className="group relative flex-shrink-0 w-80 sm:w-96 bg-gradient-to-br from-white to-primary-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-primary-100 flex flex-col h-full min-h-80"
+                  >
+                    {/* Course Image */}
+                    <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-primary-100">
+                      <Image
+                        src={course.image}
+                        alt={course.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                        className="object-cover object-center group-hover:scale-110 transition duration-300"
+                        priority={false}
+                        quality={90}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </div>
 
-              {/* Course Content */}
-              <div className="p-6 sm:p-7 lg:p-8 relative flex-1 flex flex-col">
-                {/* Background Accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-accent-100 rounded-full mix-blend-multiply filter blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                    {/* Course Content */}
+                    <div className="p-5 sm:p-6 relative flex-1 flex flex-col">
+                      {/* Background Accent */}
+                      <div className="absolute top-0 right-0 w-20 h-20 bg-accent-100 rounded-full mix-blend-multiply filter blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
-                <div className="relative z-10 flex-1 flex flex-col">
-                  <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition duration-300 text-accent-600">
-                    {courseIcons[course.id]}
+                      <div className="relative z-10 flex-1 flex flex-col">
+                        <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition duration-300 text-accent-600">
+                          {courseIcons[course.id]}
+                        </div>
+                        <h3 className="text-base sm:text-lg font-black text-primary-700 mb-1 group-hover:text-accent-600 transition line-clamp-2">
+                          {course.title}
+                        </h3>
+                        <p className="text-sm sm:text-base font-bold text-neutral-600 leading-relaxed line-clamp-2">
+                          {course.description}
+                        </p>
+                      </div>
+
+                      {/* Bottom Accent Line */}
+                      <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-accent-500 to-accent-300 w-0 group-hover:w-full transition-all duration-300"></div>
+                    </div>
                   </div>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-black text-primary-700 mb-1 sm:mb-2 group-hover:text-accent-600 transition line-clamp-2">
-                    {course.title}
-                  </h3>
-                  <p className="text-sm sm:text-base font-bold text-neutral-600 leading-relaxed line-clamp-2">
-                    {course.description}
-                  </p>
-                </div>
+                ))}
+              </div>
+              
+              {/* Duplicate courses for seamless loop */}
+              <div className="marquee-item px-4 flex gap-6 sm:gap-8">
+                {courses.map((course) => (
+                  <div
+                    key={`${course.id}-2`}
+                    className="group relative flex-shrink-0 w-80 sm:w-96 bg-gradient-to-br from-white to-primary-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-primary-100 flex flex-col h-full min-h-80"
+                  >
+                    {/* Course Image */}
+                    <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-primary-100">
+                      <Image
+                        src={course.image}
+                        alt={course.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                        className="object-cover object-center group-hover:scale-110 transition duration-300"
+                        priority={false}
+                        quality={90}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </div>
 
-                {/* Bottom Accent Line */}
-                <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-accent-500 to-accent-300 w-0 group-hover:w-full transition-all duration-300"></div>
+                    {/* Course Content */}
+                    <div className="p-5 sm:p-6 relative flex-1 flex flex-col">
+                      {/* Background Accent */}
+                      <div className="absolute top-0 right-0 w-20 h-20 bg-accent-100 rounded-full mix-blend-multiply filter blur-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+                      <div className="relative z-10 flex-1 flex flex-col">
+                        <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition duration-300 text-accent-600">
+                          {courseIcons[course.id]}
+                        </div>
+                        <h3 className="text-base sm:text-lg font-black text-primary-700 mb-1 group-hover:text-accent-600 transition line-clamp-2">
+                          {course.title}
+                        </h3>
+                        <p className="text-sm sm:text-base font-bold text-neutral-600 leading-relaxed line-clamp-2">
+                          {course.description}
+                        </p>
+                      </div>
+
+                      {/* Bottom Accent Line */}
+                      <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-accent-500 to-accent-300 w-0 group-hover:w-full transition-all duration-300"></div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Our Learning Approach Section */}

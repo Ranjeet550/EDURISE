@@ -116,30 +116,27 @@ export default function GalleryPage() {
             ))}
           </div>
 
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Gallery Grid - Clean Mason Style */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {filteredImages.map((image) => (
               <div
                 key={image.id}
                 onClick={() => setSelectedImage(image.src)}
-                className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer"
+                className="group break-inside-avoid overflow-hidden rounded-lg cursor-pointer transition duration-300"
               >
-                <div className="relative h-64 overflow-hidden bg-neutral-100">
+                <div className="relative overflow-hidden bg-neutral-100">
                   <Image
                     src={image.src}
                     alt={image.title}
                     width={400}
                     height={300}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition duration-300"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 flex items-center justify-center">
-                    <span className="text-white opacity-0 group-hover:opacity-100 transition duration-300 text-lg font-semibold">
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
+                    <span className="text-white opacity-0 group-hover:opacity-100 transition duration-300 font-semibold">
                       View
                     </span>
                   </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-neutral-600">{image.description}</p>
                 </div>
               </div>
             ))}
@@ -185,58 +182,49 @@ export default function GalleryPage() {
             </div>
 
             {/* Videos Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                <div className="relative h-64 overflow-hidden bg-black">
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+              <div className="group break-inside-avoid overflow-hidden rounded-lg">
+                <div className="relative overflow-hidden bg-black">
                   <video
                     width={400}
                     height={300}
                     controls
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto"
                     poster="/eventsimage/IMG_20260619_141234_052.jpg.jpeg"
                   >
                     <source src="/eventvideo/WhatsApp Video 2026-06-19 at 2.20.13 PM.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <div className="p-4">
-                  <p className="text-sm text-neutral-600">Watch our latest event moments and activities in action.</p>
-                </div>
               </div>
 
-              <div className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                <div className="relative h-64 overflow-hidden bg-black">
+              <div className="group break-inside-avoid overflow-hidden rounded-lg">
+                <div className="relative overflow-hidden bg-black">
                   <video
                     width={400}
                     height={300}
                     controls
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto"
                     poster="/eventsimage/IMG_20260619_141252_117.jpg.jpeg"
                   >
                     <source src="/eventvideo/WhatsApp Video 2026-06-19 at 2.20.17 PM.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <div className="p-4">
-                  <p className="text-sm text-neutral-600">Experience the energy and enthusiasm from our events.</p>
-                </div>
               </div>
 
-              <div className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                <div className="relative h-64 overflow-hidden bg-black">
+              <div className="group break-inside-avoid overflow-hidden rounded-lg">
+                <div className="relative overflow-hidden bg-black">
                   <video
                     width={400}
                     height={300}
                     controls
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto"
                     poster="/eventsimage/IMG_20260619_141255_952.jpg.jpeg"
                   >
                     <source src="/eventvideo/WhatsApp Video 2026-06-19 at 2.20.31 PM.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-neutral-600">Memorable moments from our community activities.</p>
                 </div>
               </div>
             </div>

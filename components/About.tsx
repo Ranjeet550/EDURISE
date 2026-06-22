@@ -69,23 +69,23 @@ export default function About() {
             {/* Founder Image and Title */}
             <div className="mb-8">
               <div className="relative mb-8">
-                <div className="w-full aspect-square rounded-2xl overflow-hidden">
+                <div className="w-full rounded-2xl overflow-hidden">
                   <Image
                     src="/FOUNDER/WhatsApp Image 2026-06-19 at 6.50.55 PM.jpeg"
                     alt="Vivek Sir - Founder"
                     width={400}
-                    height={400}
-                    className="w-full h-full object-cover"
+                    height={500}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-accent-500 text-white px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
-                  Founder & Mentor
+                <div className="absolute -bottom-4 -right-4 text-accent-600 px-4 py-2 rounded-lg font-bold text-sm">
+                  <span className="bg-yellow-200 px-2 py-1 rounded">Founder & Mentor</span>
                 </div>
               </div>
 
               <div>
                 <h3 className="text-3xl font-bold text-neutral-900 mb-1">Vivek Sir</h3>
-                <p className="text-primary-600 font-semibold text-base mb-3">Head Coach & Educator</p>
+                <p className="text-primary-600 font-semibold text-base mb-3 bg-accent-100 px-3 py-1 rounded-md inline-block">Head Coach & Educator</p>
                 <p className="text-neutral-600 text-sm font-light italic">Building Confidence, Shaping Futures</p>
               </div>
 

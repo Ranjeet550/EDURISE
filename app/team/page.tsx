@@ -26,7 +26,7 @@ export default function TeamPage() {
     },
     {
       id: 3,
-      name: 'Amit Sharma',
+      name: 'Prince Singh',
       position: 'Science Coordinator',
       subject: 'Physics & Chemistry',
       image: '/teams/WhatsApp Image 2026-06-19 at 6.50.56 PM.jpeg',
@@ -35,30 +35,12 @@ export default function TeamPage() {
     },
     {
       id: 4,
-      name: 'Neha Verma',
-      position: 'Mathematics Faculty',
-      subject: 'Advanced Mathematics',
-      image: '/images/logo.jpg',
-      bio: 'Expert in solving complex mathematical problems',
-      expertise: ['Algebra', 'Geometry', 'Calculus']
-    },
-    {
-      id: 5,
-      name: 'Vikram Patel',
-      position: 'Social Studies Lead',
-      subject: 'History & Geography',
-      image: '/images/logo.jpg',
-      bio: 'Passionate about making history and geography engaging',
-      expertise: ['History', 'Geography', 'Social Science']
-    },
-    {
-      id: 6,
-      name: 'Anjali Desai',
-      position: 'Student Counselor',
-      subject: 'Career & Personal Development',
-      image: '/images/logo.jpg',
-      bio: 'Helping students achieve their dreams',
-      expertise: ['Career Guidance', 'Counseling', 'Mentoring']
+      name: 'Sami Mam',
+      position: 'Hindi & Sanskrit Faculty',
+      subject: 'Hindi & Sanskrit',
+      image: '/teams/WhatsApp Image 2026-06-22 at 7.18.32 PM.jpeg',
+      bio: 'Expert in Hindi and Sanskrit language teaching with passion for cultural education',
+      expertise: ['Hindi', 'Sanskrit', 'Language']
     },
   ]
 
@@ -78,43 +60,41 @@ export default function TeamPage() {
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member) => (
               <div
                 key={member.id}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group"
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group relative"
+                style={{ aspectRatio: '3/4' }}
               >
                 {/* Image Section */}
-                <div className="relative h-80 overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100">
+                <div className="relative w-full h-full bg-gradient-to-br from-primary-100 to-accent-100">
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                    fill
+                    className="w-full h-full object-cover"
+                    priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
                 </div>
 
-                {/* Content Section */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-neutral-800 mb-1">{member.name}</h3>
-                  <p className="text-accent-600 font-semibold mb-2">{member.position}</p>
-                  <p className="text-sm text-neutral-600 mb-4">{member.bio}</p>
+                {/* Content Section - Hidden by default, shown on hover */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-black/95 p-6 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300">
+                  <h3 className="text-3xl font-black text-white mb-2 drop-shadow-lg">{member.name}</h3>
+                  <p className="text-xl font-bold text-accent-300 mb-3 drop-shadow-md">{member.position}</p>
+                  <p className="text-sm text-gray-100 mb-4 font-medium drop-shadow-md leading-relaxed">{member.bio}</p>
 
                   {/* Expertise Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2">
                     {member.expertise.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="inline-block bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-xs font-semibold"
+                        className="inline-block bg-gradient-to-r from-accent-500 to-accent-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
-
-
                 </div>
               </div>
             ))}

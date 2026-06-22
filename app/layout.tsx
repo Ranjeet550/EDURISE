@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins, Playfair_Display, Open_Sans, Montserrat } from 'next/font/google'
 import './globals.css'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -89,6 +90,7 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} ${playfair.variable} ${googleSans.variable} ${montserrat.variable}`}>
       <body className="bg-white text-gray-900">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   )
