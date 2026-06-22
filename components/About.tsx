@@ -29,7 +29,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <p className="text-neutral-600 text-lg font-light">Comprehensive education for all academic levels with personalized coaching and expert guidance.</p>
+              <p className="text-neutral-600 text-lg font-light">Comprehensive education for <span className="font-bold text-red-600">All Academic Levels</span> with personalized coaching and expert guidance.</p>
               <p className="text-accent-600 font-semibold mt-4 flex items-center gap-2">
                 ⭐⭐⭐⭐⭐ <span className="text-neutral-700">10+ Years Excellence</span>
               </p>
